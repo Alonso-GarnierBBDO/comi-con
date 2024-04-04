@@ -1,0 +1,53 @@
+@use 'sass:math';
+
+// Fonts Imports
+
+
+// Fonts Vars
+
+
+// Colors
+
+
+
+// Medias Query
+@mixin bp($point) {
+    @if $point == escritorio {
+        @media (min-width: 1600px) { @content; }
+    }
+
+    @else if $point == laptopBIG {
+        @media (min-width: 1220px) { @content; }
+    }
+
+    @else if $point == laptop {
+        @media (min-width: 1100px) { @content; }
+    }
+
+    @else if $point == tabletMD {
+        @media (min-width: 901px)  { @content; }
+    }
+
+    @else if $point == tablet {
+        @media (min-width: 700px)  { @content; }
+    }
+
+    @else if($point == mobileBIG){
+        @media (min-width: 550px)  { @content; }
+    }
+}
+
+// Animation
+@mixin keyframes($name){
+    @keyframes #{$name}{
+        @content;
+    }
+}
+@mixin animate($name, $duration, $type, $loop){
+    animation: $name $duration $type $loop;
+}
+
+// Convert px to rem
+@function rem($pxValue) {
+    @return math.div($pxValue, 16px) * 1rem; 
+}
