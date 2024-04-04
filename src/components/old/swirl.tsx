@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useRef} from 'react';
-import SwirlCanvas from '../helper/header/swirlsCanvas.ts';
+//import { useCallback, useEffect, useRef} from 'react';
+//import SwirlCanvas from '../old/swirl.tsx';
 
 const Swirl = () => {
 
-    const canvaContainer = useRef(null);
+    //const canvaContainer = useRef(null);
 
     /**
      * Creamos la scena del canva
@@ -11,26 +11,26 @@ const Swirl = () => {
      * @param contentTag 
      */
     
-    const createScene = useCallback(
-        (contentTag : HTMLElement) => {
+    /*const createScene = useCallback(
+        //(contentTag : HTMLElement) => {
 
-            SwirlCanvas(contentTag);
-        }, 
-        []
-    );
+            //SwirlCanvas(contentTag);
+        //}, 
+        //[]
+    );*/
 
-    useEffect(() => {
+    /*useEffect(() => {
         const container : HTMLElement | null = canvaContainer.current;
 
         if(container){
             createScene(container);
         }
 
-    }, [createScene]);
+    }, [createScene]);*/
 
     return(
         <>
-            <section className="swirl" ref={canvaContainer}></section>
+            {/*<section className="swirl" ref={canvaContainer}></section>*/}
         </>
     )
 
