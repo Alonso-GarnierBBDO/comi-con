@@ -1,13 +1,22 @@
 @use 'sass:math';
+@import url("https://use.typekit.net/emg2cmw.css");
 
 // Fonts Imports
-
-
+@font-face {
+    font-family: hydrophiliaLiquid_regular;
+    src: url(../fonts/HydrophiliaLiquid-Regular.otf);
+}
 // Fonts Vars
 
+$font_black: roc-grotesk-compressed, sans-serif;
+$font_regular: hydrophiliaLiquid_regular;
 
 // Colors
-
+$principal_color: #ffff;
+$segundo_color: #D017FC;
+$tercer_color: #FFF200;
+$cuarto_color: #EDA2FF;
+$quinto_color: #8E00B0;
 
 
 // Medias Query

@@ -1,5 +1,7 @@
 @import './var';
 @import './components/swirl';
+@import './components/header';
+
 
 *,
 html,
@@ -11,4 +13,30 @@ body{
 
 body{
     height: 1000vh;
+}
+
+.responsive-box {
+
+    max-width: calc(100% - 30px);
+    margin: auto;
+
+    @include bp(tablet){
+        max-width: 675px;
+    }
+
+    @include bp(tabletMD){
+        max-width: 850px;
+    }
+
+    @include bp(laptop){
+        max-width: 1000px;
+    }
+
+    @include bp(laptopBIG){
+        max-width: 1200px;
+    }
+
+    @include bp(escritorio){
+        max-width: 1300px;
+    }
 }

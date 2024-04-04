@@ -1,0 +1,188 @@
+header{
+
+    height: 100dvh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo,
+    .description{
+
+        min-height: rem(100px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .logo {
+
+        img {
+
+            width: auto;
+            height: rem(25px);
+
+        }
+
+    }
+
+    .content {
+
+        .power {
+
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+
+                display: flex;
+                flex-flow: column;
+                row-gap: 0px;
+                font-family: $font_black;
+                text-transform: uppercase;
+                font-weight: 900;
+                font-style: normal;
+    
+                span {
+    
+                    display: inline-block;
+                    text-align: center;
+                    overflow: hidden;
+    
+                    &:nth-last-child(2){
+                        color: $segundo_color;
+                    }
+    
+                    &:last-child{
+                        color: $tercer_color;
+                    }
+                    
+                    strong {
+                        //transform: translateY(150%);
+                        display: inline-block;
+                    }
+    
+                }
+    
+                span.big{
+                    font-size: rem(50px);
+                    color: $principal_color;
+                    line-height: rem(50px);
+                }
+    
+                span.small{
+                    font-size: rem(30px);
+                    line-height: rem(30px);
+                }
+    
+            }
+    
+            button {
+    
+                width: 100%;
+                max-width: 200px;
+                margin: rem(15px) auto 0px auto;
+                padding: rem(5px) 0px rem(7px) 0px;
+                font-family: $font_regular;
+                text-transform: uppercase;
+                font-size: rem(20px);
+                font-weight: bold;
+                color: $principal_color;
+                background-color: $segundo_color ;
+                border: 1.5px solid $principal_color;
+                text-shadow: rem(2px) 0 $quinto_color, rem(-2px) 0 $quinto_color, 0 rem(2px) $quinto_color, 0 rem(-2px) $quinto_color, rem(1px) rem(1px) $quinto_color, rem(-1px) rem(-1px) $quinto_color, rem(1px) rem(-1px) $quinto_color, rem(-1px) rem(-1px) $quinto_color;
+                position: relative;
+    
+                &::before,
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 0px;
+                    width: rem(2px);
+                    height: 100%;
+                    background-color: $cuarto_color;
+                }
+    
+                &::before{
+                    left: 0px;
+                }
+    
+                &::after{
+                    right: 0px;
+                }
+    
+                .top_bottom {
+    
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+    
+                    &::before,
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        left: 0px;
+                        width: 100%;
+                        background-color: $cuarto_color;
+                    }
+    
+                    &::before{
+                        height: rem(2px);
+                        top: 0px; 
+                    }
+        
+                    &::after{
+                        height: rem(5px);
+                        bottom: 0px;
+                    }
+    
+                }
+    
+            }
+
+        }
+
+        .ticket {
+
+            img {
+
+                width: 100%;
+                height: auto;
+                margin-top: rem(40px);
+                transform: rotate(-10deg);
+
+            }
+
+        }
+
+    }
+
+    .description {
+
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        color: $principal_color;
+        font-family: $font_regular;
+        text-transform: uppercase;
+
+        p {
+            font-size: rem(15px);
+            line-height: rem(15px);
+        }
+
+        h2 {
+            font-size: rem(20px);
+            text-wrap: balance;
+            margin-top: rem(7px);
+            line-height: rem(20px);
+        }
+
+    }
+
+}

@@ -5,7 +5,9 @@
     height: 100vh;
     top: 0px;
     left: 0px;
-    background-color: rgb(6, 6, 41);
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
 
     .swirl_relative {
         position: relative;

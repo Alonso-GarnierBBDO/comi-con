@@ -1,5 +1,5 @@
-import Swirl from "../components/swirl"
 import background from '../assets/img/choys_background.png';
+import Header from '../components/header/header';
 
 function App() {
 
@@ -9,16 +9,12 @@ function App() {
     <>
 
       <section className="swirl_component" style={{
-        //backgroundImage: `url(${background})`
+        backgroundImage: `url(${background})`
       }}>
-        <section className="swirl_relative">
-          <Swirl/>
-        </section>
       </section>
 
-      <header>
-
-      </header>
+      <Header/>
+      
     </>
   )
 }
