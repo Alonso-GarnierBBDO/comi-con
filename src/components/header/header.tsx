@@ -26,8 +26,8 @@ function Header() {
                             <strong>Golden ticket!</strong>
                         </span>
                     </h1>
-                    <button>
-                        Empecémos
+                    <button title='Empecémos'>
+                        <span className='title'>Empecémos</span>
                         <span className='top_bottom'></span>
                     </button>
                 </section>

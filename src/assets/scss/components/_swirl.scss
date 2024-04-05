@@ -18,15 +18,42 @@
         justify-content: center;
         align-items: center;
 
+        img.remove{
+            scale: 0;
+        }
+
         img {
              
             width: 130dvw;
             height: 130dvw;
             position: absolute;
-            bottom: 40px;
             mix-blend-mode: screen;  //color-dodge
             object-fit: contain;
             z-index: 0;
+            scale: 1;
+            transition: .5s ease scale;
+
+            @include bp(mobileBIG){
+                width: 85dvw;
+                height: 85dvw;
+            }
+
+            @include bp(tablet){
+                width: 70dvw;
+                height: 70dvw;
+            }
+
+            @include bp(laptopBIG){
+                width: 60dvw;
+                height: 60dvw;
+                max-width: 1000px;
+                max-height: 1000px;
+            }
+
+            @include bp(escritorio){
+                width: 50dvw;
+                height: 50dvw;
+            }
 
             @include keyframes(remolino){
 

@@ -14,6 +14,14 @@ header{
         align-items: center;
         justify-content: center;
 
+        @include bp(mobileBIG){
+            height: rem(70px);
+        }
+
+        @include bp(laptop){
+            height: rem(150px);
+        }
+
     }
 
     .logo {
@@ -23,11 +31,37 @@ header{
             width: auto;
             height: rem(25px);
 
+            @include bp(mobileBIG){
+                height: rem(30px);
+            }
+
+            @include bp(tablet){
+                height: 35px;
+            }
+
+            @include bp(tabletMD){
+                height: 40px;
+            }
+
+            @include bp(laptop){
+                height: 45px;
+            }
+
         }
 
     }
 
     .content {
+
+        @include bp(tablet){
+            display: grid;
+            grid-template-columns: 50% 50%;
+            width: 100%;
+        }
+
+        @include bp(tabletMD){
+            grid-template-columns: 40% 60%;
+        }
 
         .power {
 
@@ -61,7 +95,6 @@ header{
                     }
                     
                     strong {
-                        //transform: translateY(150%);
                         display: inline-block;
                     }
     
@@ -71,11 +104,53 @@ header{
                     font-size: rem(50px);
                     color: $principal_color;
                     line-height: rem(50px);
+
+                    @include bp(tablet){
+                        font-size: rem(65px);
+                        line-height: rem(65px);
+                    }
+
+                    @include bp(tabletMD){
+                        font-size: rem(80px);
+                        line-height: rem(80px);
+                    }
+
+                    @include bp(laptop){
+                        font-size: rem(90px);
+                        line-height: rem(90px);
+                    }
+
+                    @include bp(laptopBIG){
+                        font-size: rem(120px);
+                        line-height: rem(120px);
+                    }
+
                 }
     
                 span.small{
                     font-size: rem(30px);
                     line-height: rem(30px);
+
+                    @include bp(tablet){
+                        font-size: rem(45px);
+                        line-height: rem(45px);
+                    }
+
+                    @include bp(tabletMD){
+                        font-size: rem(60px);
+                        line-height: rem(60px);
+                    }
+
+                    @include bp(laptop){
+                        font-size: rem(70px);
+                        line-height: rem(70px);
+                    }
+
+                    @include bp(laptopBIG){
+                        font-size: rem(80px);
+                        line-height: rem(80px);
+                    }
+
                 }
     
             }
@@ -95,6 +170,26 @@ header{
                 border: 1.5px solid $principal_color;
                 text-shadow: rem(2px) 0 $quinto_color, rem(-2px) 0 $quinto_color, 0 rem(2px) $quinto_color, 0 rem(-2px) $quinto_color, rem(1px) rem(1px) $quinto_color, rem(-1px) rem(-1px) $quinto_color, rem(1px) rem(-1px) $quinto_color, rem(-1px) rem(-1px) $quinto_color;
                 position: relative;
+                cursor: pointer;
+                transition: .5s ease;
+
+                @include bp(tablet){
+                    font-size: rem(23px);
+                }
+
+                @include bp(tabletMD){
+                    font-size: rem(25px);
+                    max-width: 250px;
+                }
+
+                @include bp(laptop){
+                    max-width: 300px;
+                    padding: rem(10px) 0px rem(13px) 0px;
+                }
+
+                @include bp(laptopBIG){
+                    max-width: 250px;
+                }
     
                 &::before,
                 &::after{
@@ -104,6 +199,15 @@ header{
                     width: rem(2px);
                     height: 100%;
                     background-color: $cuarto_color;
+
+                    @include bp(tablet){
+                        width: rem(4px);
+                    }
+
+                    @include bp(laptop){
+                        width: rem(5px);
+                    }
+
                 }
     
                 &::before{
@@ -113,6 +217,15 @@ header{
                 &::after{
                     right: 0px;
                 }
+
+                .title {
+
+                    z-index: 999;
+                    position: relative;
+                    cursor: none;
+                    pointer-events: none;
+
+                }
     
                 .top_bottom {
     
@@ -121,6 +234,23 @@ header{
                     left: 0px;
                     width: 100%;
                     height: 100%;
+                    z-index: 0;
+
+                    &:hover {
+
+                        &::after{
+                            height: 100%;
+
+                            @include bp(tablet){
+                                height: 100%;
+                            }
+
+                            @include bp(laptop){
+                                height: 100%;
+                            }
+                        }
+
+                    }
     
                     &::before,
                     &::after{
@@ -134,11 +264,29 @@ header{
                     &::before{
                         height: rem(2px);
                         top: 0px; 
+
+                        @include bp(tablet){
+                            height: rem(4px);
+                        }
+
+                        @include bp(laptop){
+                            height: rem(5px);
+                        }
                     }
         
                     &::after{
                         height: rem(5px);
                         bottom: 0px;
+                        transition: .2s ease;
+
+                        @include bp(tablet){
+                            height: rem(7px);
+                        }
+
+                        @include bp(laptop){
+                            height: rem(12px);
+                        }
+
                     }
     
                 }
@@ -149,12 +297,43 @@ header{
 
         .ticket {
 
+            @include bp(tablet){
+                display: grid;
+                place-items: center;
+            }
+
+
             img {
 
                 width: 100%;
                 height: auto;
                 margin-top: rem(40px);
-                transform: rotate(-10deg);
+                transform: rotate(-10deg)  scale(1);
+                transition: .2s ease;
+                max-width: 350px;
+                cursor: pointer;
+
+                &:hover{
+
+                    transform: rotate(0deg) scale(1.1);
+
+                }
+
+                @include bp(mobileBIG){
+                    margin-top: rem(30px);
+                }
+
+                @include bp(tablet){
+                    max-width: 400px;
+                }
+
+                @include bp(tabletMD){
+                    max-width: 500px;
+                }
+
+                @include bp(laptopBIG){
+                    max-width: 800px;
+                }
 
             }
 
@@ -171,9 +350,31 @@ header{
         font-family: $font_regular;
         text-transform: uppercase;
 
+        @include bp(tablet){
+            text-align: left;
+            align-items: flex-start;
+            width: 100%;
+        }
+
         p {
             font-size: rem(15px);
             line-height: rem(15px);
+
+            @include bp(tabletMD){
+                font-size: rem(20px);
+                line-height: rem(20px);
+            }
+
+            @include bp(laptop){
+                font-size: rem(22px);
+                line-height: rem(22px);
+            }
+
+            @include bp(laptopBIG){
+                font-size: rem(23px);
+                line-height: rem(23px);
+            }
+
         }
 
         h2 {
@@ -181,6 +382,22 @@ header{
             text-wrap: balance;
             margin-top: rem(7px);
             line-height: rem(20px);
+
+            @include bp(tabletMD){
+                font-size: rem(25px);
+                line-height: rem(25px);
+            }
+
+            @include bp(laptop){
+                font-size: rem(27px);
+                line-height: rem(27px);
+            }
+
+            @include bp(laptopBIG){
+                font-size: rem(28px);
+                line-height: rem(28px);
+            }
+
         }
 
     }

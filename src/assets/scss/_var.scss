@@ -21,6 +21,7 @@ $quinto_color: #8E00B0;
 
 // Medias Query
 @mixin bp($point) {
+    
     @if $point == escritorio {
         @media (min-width: 1600px) { @content; }
     }
