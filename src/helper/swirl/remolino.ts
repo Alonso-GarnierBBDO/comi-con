@@ -64,6 +64,9 @@ const elementoEjecutar = (remolinoTag : HTMLElement) => {
         }else if(mediaQuery(700)){
             stringTopStyle = `calc(${ticketTop}% - ${(remolinoHeight / 2) - (ticketHeight / 2 ) - 25}px)`;
             stringLeftStyle = `calc(${ticketLeft}% - ${(remolinoHeight / 2) - (ticketHeight) - 15}px)`;
+        }else{
+            stringTopStyle = `calc(${ticketTop}% - ${(remolinoHeight / 2) - (ticketHeight ) - 25}px)`;
+            stringLeftStyle = `calc(${ticketLeft}% - ${(remolinoHeight / 2) - (ticketHeight) - 15}px)`;
         }
 
         remolinoTag.style.top = stringTopStyle;
