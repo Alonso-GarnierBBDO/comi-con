@@ -55,7 +55,7 @@ const elementoEjecutar = (remolinoTag : HTMLElement) => {
 
         const ticketTop : number = ticket.top;
         const ticketLeft : number = ticket.left;
-        let stringTopStyle : string = `calc(${ticketTop}% - ${(remolinoHeight / 2) - (ticketHeight) - 25}px)`;
+        let stringTopStyle : string = `calc(${ticketTop}% - ${(remolinoHeight / 2) - (ticketHeight) - 35}px)`;
         let stringLeftStyle : string = '';
 
         if(mediaQuery(1220)){
@@ -63,9 +63,6 @@ const elementoEjecutar = (remolinoTag : HTMLElement) => {
             stringLeftStyle = `calc(${ticketLeft}% - ${(remolinoHeight / 2) - (ticketHeight) - 15}px)`;
         }else if(mediaQuery(700)){
             stringTopStyle = `calc(${ticketTop}% - ${(remolinoHeight / 2) - (ticketHeight / 2 ) - 25}px)`;
-            stringLeftStyle = `calc(${ticketLeft}% - ${(remolinoHeight / 2) - (ticketHeight) - 15}px)`;
-        }else{
-            stringTopStyle = `calc(${ticketTop}% - ${(remolinoHeight / 2) - (ticketHeight ) - 25}px)`;
             stringLeftStyle = `calc(${ticketLeft}% - ${(remolinoHeight / 2) - (ticketHeight) - 15}px)`;
         }
 
