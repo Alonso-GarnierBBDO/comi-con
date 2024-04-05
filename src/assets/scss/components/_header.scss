@@ -308,14 +308,14 @@ header{
                 width: 100%;
                 height: auto;
                 margin-top: rem(40px);
-                transform: rotate(-10deg)  scale(1);
+                transform: rotate(-10deg);
                 transition: .2s ease;
                 max-width: 350px;
                 cursor: pointer;
 
                 &:hover{
 
-                    transform: rotate(0deg) scale(1.1);
+                    transform: rotate(0deg);
 
                 }
 

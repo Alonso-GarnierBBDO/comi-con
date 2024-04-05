@@ -19,11 +19,10 @@ const Remolino = (remolinoTag : HTMLElement) : void => {
 
             remolinoHeight = remolinoTag.offsetHeight;
             ticketHeight = ticketTag.clientHeight / 2;
-            windowHeight = window.innerHeight;
             windowWidth = window.innerWidth;
 
-        
-            window.addEventListener('load', () => {
+
+            ticketTag.addEventListener('load', () => {
                 elementoEjecutar(remolinoTag);
             })
     
@@ -46,6 +45,8 @@ const mediaQuery = (px : number) : boolean => {
 const elementoEjecutar = (remolinoTag : HTMLElement) => {
 
     if(ticketTag){
+
+        windowHeight = window.innerHeight;
 
         const ticket : {
             top: number,
