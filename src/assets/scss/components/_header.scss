@@ -179,8 +179,8 @@ header{
                     }
 
                     @include bp(laptop){
-                        font-size: rem(70px);
-                        line-height: rem(70px);
+                        font-size: rem(60px);
+                        line-height: rem(60px);
                     }
 
                     @include bp(laptopBIG){

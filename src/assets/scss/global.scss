@@ -15,12 +15,56 @@ body{
     overflow: hidden;
 }
 
-main{
+.application{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
     display: flex;
+    width: 100%;
+    transition: .3s ease;
+    opacity: 1;
+    scale: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @include bp(tabletMD){
+        overflow-y: hidden;
+    }
+
+}
+
+.application.absolute{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+    scale: 1;
+    height: 100dvh;
+
+    @include bp(tabletMD){
+        overflow-y: hidden;
+    }
+
+    @include keyframes(showElement){
+
+        0%{
+            opacity: 0;
+        }
+        
+        100%{
+            opacity: 1;
+        }
+
+    }
+
+    @include animate(showElement, .5s, linear, 1)
+
+}
+
+.application.remove{
+    scale: 1.1;
+    opacity: 0;
 }
 
 .responsive-box {
@@ -181,6 +225,49 @@ button {
                 height: rem(12px);
             }
 
+        }
+
+    }
+
+}
+
+
+.logo {
+
+    min-height: rem(100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 999;
+
+    @include bp(mobileBIG){
+        height: rem(70px);
+    }
+
+    @include bp(laptop){
+        height: rem(150px);
+    }
+
+    img {
+
+        width: auto;
+        height: rem(25px);
+
+        @include bp(mobileBIG){
+            height: rem(30px);
+        }
+
+        @include bp(tablet){
+            height: 35px;
+        }
+
+        @include bp(tabletMD){
+            height: 40px;
+        }
+
+        @include bp(laptop){
+            height: 45px;
         }
 
     }

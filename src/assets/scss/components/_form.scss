@@ -1,139 +1,327 @@
 .form_item {
 
     width: 100%;
-    min-height: 80dvh;
+    min-height: 100dvh;
+    height: 100%;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
-    .content {
-
-        width: 100%;
-
-        h2 {
-            text-align: center;
-            font-size: rem(25px);
-            line-height: rem(25px);
-            font-family: $font_regular;
-            color: $principal_color;
-        }
-
-        img {
-            width: 100%;
-            margin: rem(15px) 0px;
-            user-select: none;
-            pointer-events: none;
-        }
-
+    @include bp(tabletMD){
+        min-height: 100dvh;
+        justify-content: space-between;
     }
 
-    .form {
+    .content_items{
 
-        p {
-
-            font-size: rem(20px);
-            line-height: rem(20px);
-            text-align: center;
-            font-family: $font_regular;
-            color: $principal_color;
-            margin-bottom: rem(30px);
-
-
+        @include bp(tabletMD){
+            display: grid;
+            grid-template-columns: calc(50% - rem(20px)) 50%;
+            grid-gap: rem(20px);
         }
 
-        form {
+        @include bp(laptop){
+            //grid-template-columns: 40% 60%;
+        }
 
-            background-color: $principal_color_transparent;
-            backdrop-filter: blur(10px);
-            padding: rem(10px);
-            border-radius: rem(10px);
+        .content {
 
-            section{
-
-                display: grid;
-                grid-gap: rem(10px);
-                margin-bottom: rem(10px);
-
-                &:nth-of-type(1){
-                    grid-template-columns: repeat(2, 50%);
+            width: 100%;
+    
+            h2 {
+                text-align: center;
+                font-size: rem(25px);
+                line-height: rem(25px);
+                font-family: $font_regular;
+                color: $principal_color;
+                text-wrap: balance;
+    
+                @include bp(tablet){
+                    font-size: rem(30px);
+                    line-height: rem(30px);
                 }
 
-                &:nth-of-type(2){
-                    grid-template-columns: 40% 60%;
+                @include bp(tabletMD){
+                    font-size: rem(33px);
+                    line-height: rem(33px);
                 }
 
-                &:nth-of-type(3){
-                    grid-template-columns: 60% 40%;
+                @include bp(laptop){
+                    font-size: rem(40px);
+                    line-height: rem(40px);
                 }
 
-                &:nth-of-type(4){
-                    margin-bottom: rem(0px);
+                @include bp(laptopBIG){
+                    font-size: rem(43px);
+                    line-height: rem(43px);
                 }
 
-                label{
-
-                    display: flex;
-                    flex-flow: column;
-                    width: calc(100% - rem(10px));
-
-                    &:first-of-type{
-                        width: 100%;
-                    }
-
-                    input,
-                    select {
-
-                        width: 100%;
-                        border: none;
-                        padding: rem(12px) rem(10px);
-                        background-color: $principal_color_transparent_two;
-                        color: $principal_color;
-                        border-radius: rem(7px);
-                        text-transform: uppercase;
-                        transition: .5s ease;
-                        font-family: $font_regular;
-                        font-size: rem(13px);
-                        line-height: rem(13px);
-
-                        &::placeholder{
-                            color: $principal_color;
-                            transition: .2s ease;
-                        }
-
-                        &:focus::placeholder{
-                            color: transparent;
-                        }
-
-                    }
-
-                    input{
-                        width: calc(100% - 20px);
-                    }
-
-                    span {
-
-                        margin-top: rem(5px);
-                        color: $sexto_color;
-                        font-size: rem(14px);
-                        line-height: rem(14px);
-                        font-family: $font_regular;
-                        display: none;
-
-                    }
-
+                @include bp(escritorio){
+                    font-size: rem(50px);
+                    line-height: rem(50px);
                 }
 
             }
-
+    
+            .image{
+    
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                .remolino {
+    
+                    width: 130dvw;
+                    height: 130dvw;
+                    position: absolute;
+                    mix-blend-mode: screen;  //color-dodge
+                    object-fit: contain;
+                    transition: .3s ease scale;
+                    pointer-events: none;
+                    user-select: none;
+                    z-index: -1;
+    
+                    @include bp(mobileBIG){
+                        width: 85dvw;
+                        height: 85dvw;
+                    }
+    
+                    @include bp(tablet){
+                        width: 70dvw;
+                        height: 70dvw;
+                        translate: 0px rem(-10px);
+                    }
+                    
+                    @include bp(laptop){
+                        translate: 0px rem(-15px);
+                    }
+    
+                    @include bp(laptopBIG){
+                        width: 60dvw;
+                        height: 60dvw;
+                        max-width: 1000px;
+                        max-height: 1000px;
+                        translate: 0px rem(-20px);
+                        
+                    }
+    
+                    @include bp(escritorio){
+                        width: 50dvw;
+                        height: 50dvw;
+                        translate: 0px rem(-30px);
+                    }
+    
+    
+                    @include animate(remolino, 2s, linear, infinite)
+                }
+    
+                .image_chocolate {
+    
+                    width: 100%;
+                    margin: rem(15px) 0px;
+                    user-select: none;
+                    pointer-events: none;
+                    max-width: 350px;
+    
+                    @include bp(mobileBIG){
+                        margin: rem(20px) 0px;
+                    }
+    
+                    @include bp(tablet){
+                        max-width: 400px;
+                    }
+    
+                    @include bp(tabletMD){
+                        max-width: 500px;
+                    }
+    
+                    @include bp(laptopBIG){
+                        max-width: 800px;
+                    }
+    
+    
+                }
+        
+    
+            }
+    
         }
+    
+        .form {
+    
+            p {
+    
+                font-size: rem(20px);
+                line-height: rem(20px);
+                text-align: center;
+                font-family: $font_regular;
+                color: $principal_color;
+                margin-bottom: rem(30px);
+                text-wrap: balance;
+    
+                @include bp(tablet){
+                    font-size: rem(23px);
+                    line-height: rem(23px);
+                }
 
-        .send_form {
+                @include bp(tabletMD){
+                    font-size: rem(20px);
+                    line-height: rem(20px);
+                }
 
-            margin-top: rem(20px);
-            display: flex;
-            justify-content: center;
+                @include bp(laptop){
+                    font-size: rem(26px);
+                    line-height: rem(26px);
+                }
 
+                @include bp(laptopBIG){
+                    font-size: rem(28px);
+                    line-height: rem(28px);
+                }
+
+                @include bp(escritorio){
+                    font-size: rem(30px);
+                    line-height: rem(30px);
+                }
+    
+    
+            }
+    
+            form {
+    
+                background-color: $principal_color_transparent;
+                backdrop-filter: blur(10px);
+                padding: rem(10px);
+                border-radius: rem(10px);
+    
+                section{
+    
+                    display: grid;
+                    grid-gap: rem(10px);
+                    margin-bottom: rem(10px);
+    
+                    &:nth-of-type(1){
+                        grid-template-columns: repeat(2, 50%);
+                    }
+    
+                    &:nth-of-type(2){
+                        grid-template-columns: 40% 60%;
+                    }
+    
+                    &:nth-of-type(3){
+                        grid-template-columns: 60% 40%;
+                    }
+    
+                    &:nth-of-type(4){
+                        margin-bottom: rem(0px);
+                    }
+    
+                    label{
+    
+                        display: flex;
+                        flex-flow: column;
+                        width: calc(100% - rem(10px));
+    
+                        &:first-of-type{
+                            width: 100%;
+                        }
+    
+                        input,
+                        select {
+    
+                            width: 100%;
+                            border: none;
+                            padding: rem(12px) rem(10px);
+                            background-color: $principal_color_transparent_two;
+                            color: $principal_color;
+                            border-radius: rem(7px);
+                            text-transform: uppercase;
+                            transition: .5s ease;
+                            font-family: $font_regular;
+                            font-size: rem(13px);
+                            line-height: rem(13px);
+    
+                            &::placeholder{
+                                color: $principal_color;
+                                transition: .2s ease;
+                            }
+    
+                            &:focus::placeholder{
+                                color: transparent;
+                            }
+    
+                            @include bp(mobileBIG){
+                                font-size: rem(14px);
+                                line-height: rem(14px);
+                            }
+    
+                            @include bp(tablet){
+                                font-size: rem(15px);
+                                line-height: rem(15px);
+                            }
+
+                            @include bp(tabletMD){
+                                font-size: rem(13px);
+                                line-height: rem(13px);
+                            }
+
+                            @include bp(laptop){
+                                font-size: rem(16px);
+                                line-height: rem(16px);
+                                padding: rem(15px) rem(10px);
+                            }
+
+                            @include bp(laptopBIG){
+                                font-size: rem(17px);
+                                line-height: rem(17px);
+                            }
+            
+                            @include bp(escritorio){
+                                font-size: rem(18px);
+                                line-height: rem(18px);
+                            }
+    
+                        }
+    
+                        input{
+                            width: calc(100% - 20px);
+                        }
+    
+                        span {
+    
+                            margin-top: rem(5px);
+                            color: $sexto_color;
+                            font-size: rem(14px);
+                            line-height: rem(14px);
+                            font-family: $font_regular;
+                            display: none;
+    
+                        }
+    
+                    }
+    
+                }
+    
+            }
+    
+            .send_form {
+    
+                margin: rem(20px) 0px;
+                display: flex;
+                justify-content: center;
+
+                button {
+
+                    @include bp(tabletMD){
+                        max-width: 200px;
+                    }
+
+                }
+    
+            }
+    
         }
 
     }
