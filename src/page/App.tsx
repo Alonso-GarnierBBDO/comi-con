@@ -1,16 +1,22 @@
 import Header from '../components/header/header';
-import Swirl from '../components/swirl/swirl';
+import background from '../assets/img/choys_background.png';
+//import Swirl from '../components/swirl/swirl';
+//import Form from '../components/form/form';
 
 function App() {
 
   return (
     <>
 
-      <section className="swirl_component">
+      {/*<section className="swirl_component">
         <Swirl/>
-      </section>
+      </section>*/}
 
-      <Header/>
+      <main className='application' style={{
+        backgroundImage: `url(${background})`
+      }}>
+        <Header/>
+      </main>
       
     </>
   )

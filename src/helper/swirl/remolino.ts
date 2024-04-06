@@ -55,7 +55,7 @@ const elementoEjecutar = (remolinoTag : HTMLElement) => {
 
         const ticketTop : number = ticket.top;
         const ticketLeft : number = ticket.left;
-        let stringTopStyle : string = `calc(${ticketTop}% - ${(remolinoHeight / 2) - (ticketHeight) + 15}px)`;
+        let stringTopStyle : string = `calc(${ticketTop}% - ${(remolinoHeight / 2) - (ticketHeight) + 12.5}px)`;
         let stringLeftStyle : string = '';
 
         if(mediaQuery(1220)){

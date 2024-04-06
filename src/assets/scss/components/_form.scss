@@ -1,0 +1,141 @@
+.form_item {
+
+    width: 100%;
+    min-height: 80dvh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+
+        width: 100%;
+
+        h2 {
+            text-align: center;
+            font-size: rem(25px);
+            line-height: rem(25px);
+            font-family: $font_regular;
+            color: $principal_color;
+        }
+
+        img {
+            width: 100%;
+            margin: rem(15px) 0px;
+            user-select: none;
+            pointer-events: none;
+        }
+
+    }
+
+    .form {
+
+        p {
+
+            font-size: rem(20px);
+            line-height: rem(20px);
+            text-align: center;
+            font-family: $font_regular;
+            color: $principal_color;
+            margin-bottom: rem(30px);
+
+
+        }
+
+        form {
+
+            background-color: $principal_color_transparent;
+            backdrop-filter: blur(10px);
+            padding: rem(10px);
+            border-radius: rem(10px);
+
+            section{
+
+                display: grid;
+                grid-gap: rem(10px);
+                margin-bottom: rem(10px);
+
+                &:nth-of-type(1){
+                    grid-template-columns: repeat(2, 50%);
+                }
+
+                &:nth-of-type(2){
+                    grid-template-columns: 40% 60%;
+                }
+
+                &:nth-of-type(3){
+                    grid-template-columns: 60% 40%;
+                }
+
+                &:nth-of-type(4){
+                    margin-bottom: rem(0px);
+                }
+
+                label{
+
+                    display: flex;
+                    flex-flow: column;
+                    width: calc(100% - rem(10px));
+
+                    &:first-of-type{
+                        width: 100%;
+                    }
+
+                    input,
+                    select {
+
+                        width: 100%;
+                        border: none;
+                        padding: rem(12px) rem(10px);
+                        background-color: $principal_color_transparent_two;
+                        color: $principal_color;
+                        border-radius: rem(7px);
+                        text-transform: uppercase;
+                        transition: .5s ease;
+                        font-family: $font_regular;
+                        font-size: rem(13px);
+                        line-height: rem(13px);
+
+                        &::placeholder{
+                            color: $principal_color;
+                            transition: .2s ease;
+                        }
+
+                        &:focus::placeholder{
+                            color: transparent;
+                        }
+
+                    }
+
+                    input{
+                        width: calc(100% - 20px);
+                    }
+
+                    span {
+
+                        margin-top: rem(5px);
+                        color: $sexto_color;
+                        font-size: rem(14px);
+                        line-height: rem(14px);
+                        font-family: $font_regular;
+                        display: none;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .send_form {
+
+            margin-top: rem(20px);
+            display: flex;
+            justify-content: center;
+
+        }
+
+    }
+
+}
