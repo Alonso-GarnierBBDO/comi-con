@@ -49,6 +49,10 @@ $septimo_color: #201978;
     @else if($point == mobileBIG){
         @media (min-width: 550px)  { @content; }
     }
+
+    @else if($point == mobileMID){
+        @media (min-width: 450px)  { @content; }
+    }
 }
 
 // Animation

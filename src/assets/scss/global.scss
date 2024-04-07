@@ -14,6 +14,7 @@ body{
 
 body{
     overflow: hidden;
+    height: 100dvh;
 }
 
 .application{
@@ -71,6 +72,12 @@ body{
 
 .application.remove.delete{
     display: none;
+}
+
+.application.game{
+    @include bp(tablet){
+        overflow: hidden;
+    }
 }
 
 .responsive-box {

@@ -60,7 +60,7 @@ function App() {
         {
           removeForm && 
           <>
-            <section className={`application absolute`} style={{
+            <section className={`application absolute game`} style={{
               backgroundImage: `url(${background})`
             }}>
               <Game/>
