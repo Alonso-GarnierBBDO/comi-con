@@ -132,6 +132,7 @@
             justify-content: space-between;
             align-items: center;
             height: 100%;
+            position: relative;
 
             @include bp(tablet){
                 height: calc(70% - rem(70px));
@@ -182,7 +183,13 @@
                 }
 
                 @include bp(escritorio){
-                    width: 50%;
+                    width: 40%;
+                }
+
+
+                h2.animate{
+                    transform: scale(.7);
+                    opacity: 0;
                 }
 
                 h2 {
@@ -193,6 +200,9 @@
                     color: $principal_color;
                     font-family: $font_regular;
                     text-transform: uppercase;
+                    transition: .3s ease;
+                    transform: scale(1);
+                    opacity: 1;
 
                     @include bp(mobileMID){
                         font-size: rem(18px);
@@ -235,9 +245,11 @@
                 height: calc(47.5% - rem(30px));
                 transform: translateY(rem(-34px));
                 display: flex;
+                flex-flow: column;
                 justify-content: center;
                 align-items: center;
                 padding: rem(15px);
+                position: relative;
 
                 @include bp(mobileMID){
                     width: calc(60% - rem(30px));
@@ -263,10 +275,124 @@
                 }
 
                 @include bp(escritorio){
-                    width: calc(50% - rem(30px));
+                    width: calc(40% - rem(30px));
+                }
+
+                .finish_item {
+                    
+                    padding: rem(5px) rem(4px) rem(7px) rem(4px);
+                    position: absolute;
+                    bottom: 6%;
+                    font-size: rem(15px);
+
+                    &:disabled{
+                        opacity: 0.5;
+                        pointer-events: none;
+                        user-select: none;
+                    }
+
+                    @include keyframes(showButton){
+
+                        0%{
+                            transform: scale(0.7);
+                            opacity: 0;
+                        }
+                        
+                        100%{
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+                
+                    }
+                
+                    @include animate(showButton, .3s, ease, 1);
+
+                    &:hover{
+                        .top_bottom{
+
+                            &::after{
+                                height: 100%;
+                            }
+
+                        }
+                    }
+
+                    @include bp(mobileMID){
+                        max-width: 210px;
+                    }
+
+                    @include bp(tablet){
+                        max-width: 240px;
+                        bottom: -18%;
+                    }
+
+                    @include bp(tabletMD){
+                        max-width: 270px;
+                        bottom: -23%;
+                    }
+
+                    @include bp(laptop){
+                        padding: rem(0px) rem(4px) rem(2px) rem(4px);
+                        bottom: -25%;
+                    }
+
+                    @include bp(laptopBIG){
+                        padding: rem(0px) rem(4px) rem(2px) rem(4px);
+                        bottom: -35%;
+                    }
+
+                    @include bp(escritorio){
+                        bottom: -40%;
+                    }
+
+                    .title {
+
+                        transform: translateY(0px);
+
+                        @include bp(mobileMID){
+                            width: 100%;
+                        }
+                    }
+
+                    .top_bottom{
+                        @include bp(laptop){
+                            position: initial;
+                        }
+                    }
+
+                    span {
+
+                        @include bp(tablet){
+                            font-size: rem(18px);
+                        }
+                    
+                        @include bp(tabletMD){
+                            font-size: rem(19px);
+                        }
+                    
+                        @include bp(laptop){
+                            max-width: 300px;
+                            padding: rem(10px) 0px rem(13px) 0px;
+                        }
+                    
+                        @include bp(laptopBIG){
+                            max-width: 250px;
+                        }
+
+                    }
+
+                }
+
+                form.animate{
+                    transform: scale(.7);
+                    opacity: 0;
                 }
 
                 form {
+
+                    transition: .3s ease;
+                    transform: scale(1);
+                    opacity: 1;
 
                     .options {
 

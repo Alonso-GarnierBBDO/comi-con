@@ -1,9 +1,77 @@
+import { useState } from 'react';
+
 import ChoysLogo from '../../assets/img/choys_logo.png';
 import RemolinoImg from '../../assets/img/remolino.png';
 import GameImg from '../../assets/img/game_mobile.png';
+import QuestionOne from './questions/question_one';
+import QuestionTwo from './questions/question_two';
+import QuestionThree from './questions/question_three';
+import QuestionFour from './questions/question_four';
+import QuestionFive from './questions/question_five';
+import QuestionSix from './questions/question_six';
 
 
 function Game(){
+
+    const [questionText, setQuestionText] = useState('Llegás a la clase y el profe decide hacer un quiz sorpresa… entonces vos:');
+    const [animationText, setAnimationText] = useState(false);
+    const [optionsOne, setOptionsOne] = useState(true);
+    const [optionsTwo, setOptionsTwo] = useState(false);
+    const [optionsThree, setOptionsThree] = useState(false);
+    const [optionsFour, setOptionsFour] = useState(false);
+    const [optionsFive, setOptionsFive] = useState(false);
+    const [optionsSix, setOptionsSix] = useState(false);
+    const [showButton, setShowButton] = useState(false);
+    const [buttonText, setButtonText] = useState('¡TOCÁ Y DESCUBRÍ TU PODER!');
+    const [disabledButton, setDisabletButton] = useState(false);
+
+    const saveQuestion = (value : string, questionNumber : string) => {
+        localStorage.setItem(questionNumber, value);
+
+        if(questionNumber == 'question_one'){
+            setAnimationText(true);
+            animationForm('Estás jugando online y te piden que saqués YA la basura… vos:');
+            setOptionsOne(false);
+            setOptionsTwo(true);
+        }else if(questionNumber == 'question_two'){
+            setAnimationText(true);
+            animationForm('vas con el tiempo justo a tu primera entrevista de trabajo y te encontrás con tu vecina que habla mucho… vos decidís:');
+            setOptionsTwo(false);
+            setOptionsThree(true);
+        }else if(questionNumber == 'question_three'){
+            setAnimationText(true);
+            animationForm('sale una nueva temporada de tu serie favorita el día antes de tu examen final… vos:');
+            setOptionsThree(false);
+            setOptionsFour(true);
+        }else if(questionNumber == 'question_four'){
+            setAnimationText(true);
+            animationForm('Tu crush se acerca a tu grupo de amigos… entonces vos:');
+            setOptionsFour(false);
+            setOptionsFive(true);
+        }else if(questionNumber == 'question_five'){
+            setAnimationText(true);
+            animationForm('Ya viene tu festival de música preferido pero no has ahorrado lo suficiente… entonces:');
+            setOptionsFive(false);
+            setOptionsSix(true);
+        }else if(questionNumber == 'question_six'){
+            setShowButton(true);
+        }
+
+    }
+
+    const animationForm = (text: string) => {
+        setTimeout(() => {
+            setQuestionText(text);
+            setAnimationText(false);
+        }, 300)
+    }
+
+    const sendInfo = () => {
+
+        setButtonText('Descubriendo...');
+        setDisabletButton(true);
+
+    }
 
     return (
         <>
@@ -19,41 +87,44 @@ function Game(){
                     <section className='content responsive-box'>
 
                         <section className='title'>
-                            <h2>Llegás a la clase y el profe decide hacer un quiz sorpresa… entonces vos:</h2>
+                            <h2 className={`${animationText && 'animate'}`}>{questionText}</h2>
                         </section>
 
                         <section className='text'>
-                            <form action="">
-                                <section className='option_1 options'>
-                                    <label>
-                                        <input type="radio" name="option_1" id="" />
-                                        <span>
-                                            <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M25.4111 11.5682C28.7445 13.4927 28.7445 18.304 25.4111 20.2285L7.59922 30.5122C4.26589 32.4367 0.0992263 30.0311 0.0992265 26.1821L0.0992274 5.61463C0.0992276 1.76563 4.26589 -0.639992 7.59923 1.28451L25.4111 11.5682Z" fill="#201978"/>
-                                            </svg>
-                                        </span>
-                                        <p>te unís con varios compañeros para convencer al profe de que lo posponga</p>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="option_1" id="" />
-                                        <span>
-                                            <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M25.4111 11.5682C28.7445 13.4927 28.7445 18.304 25.4111 20.2285L7.59922 30.5122C4.26589 32.4367 0.0992263 30.0311 0.0992265 26.1821L0.0992274 5.61463C0.0992276 1.76563 4.26589 -0.639992 7.59923 1.28451L25.4111 11.5682Z" fill="#201978"/>
-                                            </svg>
-                                        </span>
-                                        <p>No te preocupás porque con leer dos veces tus apuntes… la vas a romper</p>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="option_1" id="" />
-                                        <span>
-                                            <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M25.4111 11.5682C28.7445 13.4927 28.7445 18.304 25.4111 20.2285L7.59922 30.5122C4.26589 32.4367 0.0992263 30.0311 0.0992265 26.1821L0.0992274 5.61463C0.0992276 1.76563 4.26589 -0.639992 7.59923 1.28451L25.4111 11.5682Z" fill="#201978"/>
-                                            </svg>
-                                        </span>
-                                        <p>Te escapás de la clase sin que el profe te vea y llegás con una justificación la clase siguiente</p>
-                                    </label>
-                                </section>
+                            <form className={`${animationText && 'animate'}`}>
+                                {
+                                    optionsOne && <QuestionOne setItems={saveQuestion}/>
+                                }
+
+                                {
+                                    optionsTwo && <QuestionTwo setItems={saveQuestion}/>
+                                }
+
+                                {
+                                    optionsThree && <QuestionThree setItems={saveQuestion}/>
+                                }
+
+                                {
+                                    optionsFour && <QuestionFour setItems={saveQuestion}/>
+                                }
+
+                                {
+                                    optionsFive && <QuestionFive setItems={saveQuestion}/>
+                                }
+
+                                {
+                                    optionsSix && <QuestionSix setItems={saveQuestion}/>
+                                }
+
+
                             </form>
+                            {
+                                showButton && 
+                                <button className='finish_item' onClick={sendInfo} disabled={disabledButton}>
+                                    <span className='title'>{buttonText}</span>
+                                    <span className='top_bottom'></span>
+                                </button>
+                            }
                         </section>
 
                         <hr />
