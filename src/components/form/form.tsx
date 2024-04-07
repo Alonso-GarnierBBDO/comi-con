@@ -2,7 +2,90 @@ import ChoysChocolateImage from '../../assets/img/choys_chocolate.png';
 import ChoysLogo from '../../assets/img/choys_logo.png';
 import RemolinoImg from '../../assets/img/remolino.png';
 
-const Form = () => {
+type Props = {
+    removeForm: (show : boolean) => void
+ };
+
+const Form = ({ removeForm }: Props) => {
+
+    const validateEmail = (email : string) : RegExpMatchArray | null => {
+        return email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    };
+
+    const save_form = (e : React.FormEvent<HTMLFormElement>) => {
+
+        e.preventDefault()
+
+        const form : HTMLFormElement = e.target as HTMLFormElement;
+        const inputsSelectsTags : NodeListOf<HTMLInputElement | HTMLSelectElement> = form.querySelectorAll('input, select');
+        let errorNumber : number = 0;
+
+        inputsSelectsTags.forEach( (e : HTMLInputElement | HTMLSelectElement) => {
+
+            const nameInput : string = e.name;
+            const valueInput : string = e.value;
+            const placeholderInput : string | null = e.getAttribute('placeholder');
+            const typeInput : string | null = e.getAttribute('type');
+            const tagStringError: string = `.${nameInput}`;
+            const error : HTMLSpanElement | null = form.querySelector(tagStringError);
+            let firstLetter : string = 'El';
+            let required : string = 'REQUERIDO';
+            const letter : string = `${nameInput.charAt(0)}${nameInput.charAt(1)}${nameInput.charAt(2)}`;
+
+            if(letter == 'la_'){
+                firstLetter = 'La';
+                required = 'REQUERIDA'
+            }
+
+
+            if(nameInput && !valueInput && error){
+
+                error.classList.add('show');
+
+                if(placeholderInput){
+                    error.textContent = `${firstLetter} ${placeholderInput} es ${required}`;
+                }else if(e instanceof HTMLSelectElement){
+                    const selectedIndex : number = e.selectedIndex;
+                    const selectedItem : HTMLOptionElement = e.selectedOptions[selectedIndex];
+                    const selectedText : string | null = selectedItem.textContent;
+
+                    if(selectedText){
+                        error.textContent = `${firstLetter} ${selectedText} es ${required}`;
+                    }
+                    
+
+                }
+
+                errorNumber += 1;
+
+            } else if(typeInput == 'email' && error){
+
+                if(!validateEmail(valueInput)){
+                    console.log('Hoa')
+                    error.classList.add('show');
+                    error.innerHTML = `${firstLetter} ${placeholderInput} no es válido`;
+                    errorNumber += 1;
+                }else{
+                    error.classList.remove('show');
+                }
+
+            }else if(nameInput && error){
+                error.classList.remove('show');
+                error.textContent = ''
+            }            
+
+        });
+
+        if(errorNumber == 0){
+
+            inputsSelectsTags.forEach( (e : HTMLInputElement | HTMLSelectElement) => {
+                localStorage.setItem(e.name, e.value);
+            });
+
+            removeForm(true);
+        }
+
+    }
 
     return (
         <>
@@ -18,63 +101,67 @@ const Form = () => {
                             <img className='image_chocolate' src={ChoysChocolateImage} alt="Chocolate Imagen" />
                         </section>
                     </section>
-                    <section className='form'>
+                    <form onSubmit={ (e) => save_form(e) }>
                         <p>Compartinos tus datos para contactarte si sos el ganador, y para enviarte sorpresas o nuevas promociones en el futuro</p>
-                        <form action="">
+                        <section className='form'>
                             <section>
                                 <label htmlFor="">
-                                    <input type="text" placeholder='Nombre'/>
-                                    <span>Error Nombre</span>
+                                    <input type="text" placeholder='Nombre' name='name' value='Alonso'/>
+                                    <span className='name'></span>
                                 </label>
                                 <label htmlFor="">
-                                    <input type="text" placeholder='Apellido'/>
-                                    <span>Error Apellido</span>
+                                    <input type="text" placeholder='Apellido' name='last_name' value='Artavia'/>
+                                    <span className='last_name'></span>
                                 </label>
                             </section>
                             <section>
                                 <label htmlFor="">
-                                    <select name="" id="">
+                                    <select name="genero">
                                         <option value="">Género</option>
-                                        <option value="masculino">Masculino</option>
                                         <option value="femenino">Femenino</option>
+                                        <option value="masculino">Masculino</option>
                                         <option value="otro">Otro</option>
                                     </select>
-                                    <span>Error Nombre</span>
+                                    <span className='genero'></span>
                                 </label>
                                 <label htmlFor="">
-                                    <input type="email" placeholder='CORREO ELECTRÓNICO'/>
-                                    <span>Error correo electrónico</span>
-                                </label>
-                            </section>
-                            <section>
-                                <label htmlFor="">
-                                    <input type="number" name="" id="" placeholder='TELÉFONO'/>
-                                    <span>Error Nombre</span>
-                                </label>
-                                <label htmlFor="">
-                                    <input type="number" placeholder='EDAD'/>
-                                    <span>Error Edad</span>
+                                    <input type="email" placeholder='CORREO ELECTRÓNICO' name='correo_electrónico' value='alonso.artavia@garnierbbdo.com'/>
+                                    <span className='correo_electrónico'>Error correo electrónico</span>
                                 </label>
                             </section>
                             <section>
                                 <label htmlFor="">
-                                    <select name="" id="">
+                                    <input type="number" name="phone" id="" placeholder='TELÉFONO' min='11111111' value='71550572'/>
+                                    <span className='phone'>Error Nombre</span>
+                                </label>
+                                <label htmlFor="">
+                                    <input type="number" max={100} min={0} placeholder='EDAD' name='la_year' value='22'/>
+                                    <span className='la_year'>Error Edad</span>
+                                </label>
+                            </section>
+                            <section>
+                                <label htmlFor="">
+                                    <select name="la_provincia">
                                         <option value="">Provincia</option>
-                                        <option value="masculino">Masculino</option>
-                                        <option value="femenino">Femenino</option>
-                                        <option value="otro">Otro</option>
+                                        <option value="Alajuela">Alajuela</option>
+                                        <option value="Cartago">Cartago</option>
+                                        <option value="Guanacaste">Guanacaste</option>
+                                        <option value="Heredia">Heredia</option>
+                                        <option value="Limón">Limón</option>
+                                        <option value="Puntarenas">Puntarenas</option>
+                                        <option value="San José">San José</option>
                                     </select>
-                                    <span>Error Select</span>
+                                    <span className='la_provincia'>Error Select</span>
                                 </label>
                             </section>
-                        </form>
+                        </section>
                         <section className='send_form'>
                             <button type='submit'>
                                 <span className='title'>Todo listo</span>
                                 <span className='top_bottom'></span>
                             </button>
                         </section>
-                    </section>
+                    </form>
                 </section>
                 <section></section>
             </section>

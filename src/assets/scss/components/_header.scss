@@ -174,8 +174,8 @@ header{
                     }
 
                     @include bp(tabletMD){
-                        font-size: rem(60px);
-                        line-height: rem(60px);
+                        font-size: rem(55px);
+                        line-height: rem(55px);
                     }
 
                     @include bp(laptop){
@@ -184,8 +184,8 @@ header{
                     }
 
                     @include bp(laptopBIG){
-                        font-size: rem(80px);
-                        line-height: rem(80px);
+                        font-size: rem(70px);
+                        line-height: rem(70px);
                     }
 
                 }
@@ -216,6 +216,7 @@ header{
                 transition: .3s ease scale;
                 pointer-events: none;
                 user-select: none;
+                display: none;
 
                 @include bp(mobileBIG){
                     width: 85dvw;
@@ -230,6 +231,7 @@ header{
                 
                 @include bp(laptop){
                     translate: 0px rem(-15px);
+                    display: block;
                 }
 
                 @include bp(laptopBIG){
