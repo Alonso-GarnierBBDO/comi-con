@@ -1,5 +1,5 @@
 import ChoysLogo from '../../assets/img/choys_logo.png';
-//import RemolinoImg from '../../assets/img/remolino.png';
+import RemolinoImg from '../../assets/img/remolino.png';
 import GameImg from '../../assets/img/game_mobile.png';
 
 
@@ -13,7 +13,7 @@ function Game(){
                     <img src={ChoysLogo} alt="Logo Choys" width={200} height={200}/>
                 </section>
                 <section className='content_items'>
-
+                    <img src={RemolinoImg} alt="Remolino" className='remolino'/>
                     <img src={GameImg} alt="Fondo del videojuego" className='game_img'/>
                     
                     <section className='content responsive-box'>

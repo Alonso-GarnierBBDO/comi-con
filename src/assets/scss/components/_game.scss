@@ -40,6 +40,43 @@
             align-items: center;
         }
 
+        .remolino {
+                    
+            display: none;
+            width: 130dvw;
+            height: 130dvw;
+            position: absolute;
+            mix-blend-mode: screen;  //color-dodge
+            object-fit: contain;
+            transition: .3s ease scale;
+            pointer-events: none;
+            user-select: none;
+            z-index: -1;
+            
+            @include bp(laptop){
+                translate: 0px rem(-15px);
+                display: block;
+                width: 120dvw;
+                height: 120dvw;
+            }
+
+            @include bp(laptopBIG){
+                width: 120dvw;
+                height: 120dvw;
+                translate: 0px rem(-20px);
+                
+            }
+
+            @include bp(escritorio){
+                width: 90dvw;
+                height: 80dvw;
+                translate: 0px rem(-30px);
+            }
+
+
+            @include animate(remolino, 2s, linear, infinite)
+        }
+
         .game_img {
 
             width: 125%;
@@ -255,24 +292,40 @@
                             position: relative;
                             justify-content: center;
 
+                            &::before{
+                                content: "";
+                                position: absolute;
+                                width: 65%;
+                                height: 130%;
+                                left: -15%;
+                                background-color: $principal_color_transparent_two;
+                                z-index: -1;
+                                mask-image: linear-gradient(to left, black 0%, transparent 100%);
+                                opacity: 0;
+                                transition: .2s ease;
+                            }
+
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                width: 65%;
+                                height: 130%;
+                                left: 50%;
+                                background-color: $principal_color_transparent_two;
+                                z-index: -1;
+                                mask-image: linear-gradient(to right, black 0%, transparent 100%);
+                                opacity: 0;
+                                transition: .2s ease;
+                            }
+
                             &:hover{
-                                &::before{
+                                &::before,
+                                &::after{
                                     opacity: 1;
                                 }
                             }
 
-                            &::before{
-                                content: "";
-                                position: absolute;
-                                width: 130%;
-                                height: 130%;
-                                z-index: -1;
-                                background-image: url(src/assets/img/transparent.png);
-                                background-size: contain;
-                                background-position: center;
-                                opacity: 0;
-                                transition: .2s ease;
-                            }
+
 
                             svg {
                                 width: rem(15px);
