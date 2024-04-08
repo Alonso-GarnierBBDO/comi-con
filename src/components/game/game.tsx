@@ -81,7 +81,9 @@ function Game({ removeQuiz } : Props){
                     <img src={ChoysLogo} alt="Logo Choys" width={200} height={200}/>
                 </section>
                 <section className='content_items'>
-                    <img src={RemolinoImg} alt="Remolino" className='remolino'/>
+                    <section className='container_remolino'>
+                        <img src={RemolinoImg} alt="Remolino" className='remolino'/>
+                    </section>
                     <img src={GameImg} alt="Fondo del videojuego" className='game_img'/>
                     
                     <section className='content responsive-box'>

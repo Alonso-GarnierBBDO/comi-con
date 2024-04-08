@@ -69,12 +69,42 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                .container_remolino {
+                    width: 100dvw;
+                    height: 100dvw;
+                    position: absolute;
+                    overflow: hidden;
+    
+                    @include bp(mobileBIG){
+                        width: 85dvw;
+                        height: 85dvw;
+                    }
+    
+                    @include bp(tablet){
+                        width: 70dvw;
+                        height: 70dvw;
+                    }
+                    
+                    @include bp(laptop){
+                        display: block;
+                    }
+    
+                    @include bp(laptopBIG){
+                        width: 60dvw;
+                        height: 60dvw;
+                    }
+    
+                    @include bp(escritorio){
+                        width: 50dvw;
+                        height: 50dvw;
+                    }
+                }
     
                 .remolino {
                     
-                    display: none;
-                    width: 130dvw;
-                    height: 130dvw;
+                    width: 100dvw;
+                    height: 100dvw;
                     position: absolute;
                     mix-blend-mode: screen;  //color-dodge
                     object-fit: contain;

@@ -40,9 +40,40 @@
             align-items: center;
         }
 
+        .container_remolino {
+            width: 130dvw;
+            height: 130dvw;
+            position: absolute;
+            overflow: hidden;
+
+            @include bp(mobileBIG){
+                width: 130dvw;
+                height: 130dvw;
+            }
+
+            @include bp(tablet){
+                width: 100dvw;
+                height: 100dvw;
+                top: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            @include bp(laptop){
+                display: flex;
+                width: 120dvw;
+                height: 100dvh;
+            }
+
+            @include bp(escritorio){
+                width: 90dvw;
+                height: 100dvh;
+            }
+        }
+
         .remolino {
                     
-            display: none;
             width: 130dvw;
             height: 130dvw;
             position: absolute;

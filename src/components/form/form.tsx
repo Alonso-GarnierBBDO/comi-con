@@ -101,7 +101,9 @@ const Form = ({ removeForm }: Props) => {
                     <section className='content'>
                         <h2>¡PRIMERO, VAMOS A CONOCER EL PERFIL DE TU PERSONAJE!</h2>
                         <section className='image'>
-                            <img className='remolino' src={RemolinoImg} alt="Remolino dan vueltas" />
+                            <section className='container_remolino'>
+                                <img className='remolino' src={RemolinoImg} alt="Remolino dan vueltas" />
+                            </section>
                             <img className='image_chocolate' src={ChoysChocolateImage} alt="Chocolate Imagen" />
                         </section>
                     </section>
