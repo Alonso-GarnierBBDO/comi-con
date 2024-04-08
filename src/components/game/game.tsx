@@ -12,6 +12,8 @@ import QuestionFour from './questions/question_four';
 import QuestionFive from './questions/question_five';
 import QuestionSix from './questions/question_six';
 
+import LoadingComponent from './load';
+
 type Props = {
     removeQuiz: (show : boolean) => void
  };
@@ -26,6 +28,7 @@ function Game({ removeQuiz } : Props){
     const [optionsFour, setOptionsFour] = useState(false);
     const [optionsFive, setOptionsFive] = useState(false);
     const [optionsSix, setOptionsSix] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const saveQuestion = (value : string, questionNumber : string) => {
         localStorage.setItem(questionNumber, value);
@@ -58,8 +61,14 @@ function Game({ removeQuiz } : Props){
             setOptionsFive(false);
             setOptionsSix(true);
         }else if(questionNumber == 'question_six'){
+            setAnimationText(true);
+            animationForm('GUARDANDO DATOS...');
+            setOptionsSix(false);
+            setLoading(true);
 
-            removeQuiz(true);
+            setTimeout(()=> {
+                removeQuiz(true);
+            }, 3000)
             
         }
 
@@ -116,6 +125,10 @@ function Game({ removeQuiz } : Props){
 
                                 {
                                     optionsSix && <QuestionSix setItems={saveQuestion}/>
+                                }
+
+                                {
+                                    loading && <LoadingComponent/>
                                 }
 
 

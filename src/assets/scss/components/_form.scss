@@ -75,6 +75,8 @@
                     height: 100dvw;
                     position: absolute;
                     overflow: hidden;
+                    z-index: -1;
+                    mix-blend-mode: screen;
     
                     @include bp(mobileBIG){
                         width: 85dvw;
