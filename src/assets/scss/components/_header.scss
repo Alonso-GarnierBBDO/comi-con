@@ -106,8 +106,9 @@ header{
             .title {
 
                 position: relative;
-                height: rem(175px);
+                height: rem(155px);
                 width: 100%;
+                background-color: red;
 
                 @include bp(tablet){
                     height: rem(195px);
@@ -163,31 +164,10 @@ header{
 
                 }
 
-                /*.translate {
-
-                    transform: translateY(rem(39px));
-
-                    @include bp(tablet){
-                        transform: translateY(rem(43px));
-                    }
-
-                    @include bp(tabletMD){
-                        transform: translateY(rem(49px));
-                    }
-
-                    @include bp(laptop){
-                        transform: translateY(rem(60px));
-                    }
-
-                    @include bp(laptopBIG){
-                        transform: translateY(rem(79px));
-                    }
-
-                }*/
 
                 .tu_poder{
                     
-                    transform: translateY(rem(-20px));
+                    transform: translateY(rem(-17px));
 
                     @include bp(tablet){
                         transform: translateY(rem(-22px));
@@ -208,7 +188,7 @@ header{
 
                 .participa {
 
-                    transform: translateY(rem(-37px));
+                    transform: translateY(rem(-32px));
 
                     @include bp(tablet){
                         transform: translateY(rem(-40px));
@@ -230,7 +210,7 @@ header{
 
                 .golden {
 
-                    transform: translateY(rem(-49px));
+                    transform: translateY(rem(-42px));
 
                     @include bp(tablet){
                         transform: translateY(rem(-54px));
@@ -251,9 +231,9 @@ header{
     
                 span.big{
 
-                    font-size: rem(70px);
+                    font-size: rem(60px);
                     color: $principal_color;
-                    line-height: rem(70px);
+                    line-height: rem(60px);
 
                     @include bp(tablet){
                         font-size: rem(75px);
@@ -278,8 +258,8 @@ header{
                 }
     
                 span.small{
-                    font-size: rem(45px);
-                    line-height: rem(45px);
+                    font-size: rem(40px);
+                    line-height: rem(40px);
 
                     @include bp(tablet){
                         font-size: rem(55px);
