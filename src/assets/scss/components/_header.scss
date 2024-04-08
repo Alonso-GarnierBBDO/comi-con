@@ -136,44 +136,106 @@ header{
                     }
     
                 }
-    
-                span.big{
-                    font-size: rem(50px);
-                    color: $principal_color;
-                    line-height: rem(50px);
+
+                span.tu_poder{
+
+                    margin-left: rem(10px);
+
+                }
+
+                .translate {
+
+                    transform: translateY(rem(39px));
 
                     @include bp(tablet){
-                        font-size: rem(65px);
-                        line-height: rem(65px);
+                        transform: translateY(rem(43px));
                     }
 
                     @include bp(tabletMD){
-                        font-size: rem(80px);
-                        line-height: rem(80px);
+                        transform: translateY(rem(49px));
                     }
 
                     @include bp(laptop){
+                        transform: translateY(rem(60px));
+                    }
+
+                    @include bp(laptopBIG){
+                        transform: translateY(rem(79px));
+                    }
+
+                }
+
+                .tu_poder{
+                    
+                    transform: translateY(rem(18px));
+
+                    @include bp(tablet){
+                        transform: translateY(rem(20px));
+                    }
+
+                    @include bp(tabletMD){
+                        transform: translateY(rem(22px));
+                    }
+
+                    @include bp(laptop){
+                        transform: translateY(rem(28px));
+                    }
+
+                    @include bp(laptopBIG){
+                        transform: translateY(rem(37px));
+                    }
+                }
+
+                .golden {
+
+                    transform: translateY(rem(-11px));
+
+                    @include bp(tablet){
+                        transform: translateY(rem(-15px));
+                    }
+
+                    @include bp(laptop){
+                        transform: translateY(rem(-16px));
+                    }
+
+                    @include bp(laptopBIG){
+                        transform: translateY(rem(-22px));
+                    }
+                }
+    
+                span.big{
+
+                    font-size: rem(70px);
+                    color: $principal_color;
+                    line-height: rem(70px);
+
+                    @include bp(tablet){
+                        font-size: rem(75px);
+                        line-height: rem(75px);
+                    }
+
+                    @include bp(tabletMD){
                         font-size: rem(90px);
                         line-height: rem(90px);
                     }
 
+                    @include bp(laptop){
+                        font-size: rem(110px);
+                        line-height: rem(110px);
+                    }
+
                     @include bp(laptopBIG){
-                        font-size: rem(120px);
-                        line-height: rem(120px);
+                        font-size: rem(135px);
+                        line-height: rem(135px);
                     }
 
                 }
     
                 span.small{
-                    font-size: rem(30px);
-                    line-height: rem(30px);
+                    font-size: rem(45px);
+                    line-height: rem(45px);
 
                     @include bp(tablet){
-                        font-size: rem(45px);
-                        line-height: rem(45px);
-                    }
-
-                    @include bp(tabletMD){
                         font-size: rem(55px);
                         line-height: rem(55px);
                     }
@@ -184,8 +246,8 @@ header{
                     }
 
                     @include bp(laptopBIG){
-                        font-size: rem(70px);
-                        line-height: rem(70px);
+                        font-size: rem(80px);
+                        line-height: rem(80px);
                     }
 
                 }
@@ -206,17 +268,48 @@ header{
             display: grid;
             place-items: center;
 
+            .container_remolino {
+                width: 100dvw;
+                height: 100dvw;
+                position: absolute;
+                overflow: hidden;
+
+                @include bp(mobileBIG){
+                    width: 85dvw;
+                    height: 85dvw;
+                }
+
+                @include bp(tablet){
+                    width: 70dvw;
+                    height: 70dvw;
+                }
+                
+                @include bp(laptop){
+                    display: block;
+                }
+
+                @include bp(laptopBIG){
+                    width: 60dvw;
+                    height: 60dvw;
+                }
+
+                @include bp(escritorio){
+                    width: 50dvw;
+                    height: 50dvw;
+                }
+            }
+
             .remolino {
 
-                width: 130dvw;
-                height: 130dvw;
+                width: 100dvw;
+                height: 100dvw;
                 position: absolute;
                 mix-blend-mode: screen;  //color-dodge
                 object-fit: contain;
                 transition: .3s ease scale;
                 pointer-events: none;
                 user-select: none;
-                display: none;
+                //display: none;
 
                 @include bp(mobileBIG){
                     width: 85dvw;

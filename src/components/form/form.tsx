@@ -160,8 +160,8 @@ const Form = ({ removeForm }: Props) => {
                             </section>
                         </section>
                         <section className='send_form'>
-                            <button type='submit'>
-                                <span className='title'>Todo listo</span>
+                            <button type='submit' className='submit_button'>
+                                <span className='title'>¡EMPEZÁ EL QUIZ AQUÍ!</span>
                                 <span className='top_bottom'></span>
                             </button>
                         </section>

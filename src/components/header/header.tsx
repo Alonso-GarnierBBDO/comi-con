@@ -11,7 +11,7 @@ type Props = {
 
 function Header({ removeHeader }: Props) {
 
-    const [ startText, setStartText ] = useState('Empecémos');
+    const [ startText, setStartText ] = useState('Empecemos');
 
     const showForm = () => {
 
@@ -34,16 +34,16 @@ function Header({ removeHeader }: Props) {
             <section className="content">
                 <section className='power'>
                     <h1 title="¡Descubrí tu poder y participá por un golden ticket!">
-                        <span className='big'>
+                        <span className='big translate'>
                             <strong>¡Descubrí</strong>
                         </span>
-                        <span className='big'>
+                        <span className='big tu_poder'>
                             <strong>Tu poder</strong>
                         </span>
                         <span className='small'>
                             <strong>Y participá por un</strong>
                         </span>
-                        <span className='small'>
+                        <span className='small golden'>
                             <strong>Golden ticket!</strong>
                         </span>
                     </h1>
@@ -53,7 +53,9 @@ function Header({ removeHeader }: Props) {
                     </button>
                 </section>
                 <section className='ticket'>
-                    <img className='remolino' src={Remolino} alt="Remolino dan vueltas" />
+                    <section className='container_remolino'>
+                        <img className='remolino' src={Remolino} alt="Remolino dan vueltas" />
+                    </section>
                     <img className='ticket_img' src={TicketImg} alt="Golden Ticket" width={300} height={300}/>
                 </section>
             </section>

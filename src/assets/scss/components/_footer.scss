@@ -9,14 +9,18 @@ footer{
 
     .space{
 
-        display: flex;
         align-items: center;
         justify-content: center;
+        display: none;
 
         @include bp(mobileBIG){
             min-height: rem(100px);
             height: rem(70px);
             width: 100%;
+        }
+
+        @include bp(tabletMD){
+            display: flex;
         }
 
         @include bp(laptop){
@@ -56,8 +60,8 @@ footer{
 
             text-align: center;
             font-family: $font_black;
-            font-size: rem(45px);
-            line-height: rem(45px);
+            font-size: rem(50px);
+            line-height: rem(37px); 
             display: flex;
             flex-flow: column;
             text-wrap: balance;
@@ -74,29 +78,29 @@ footer{
 
 
             @include bp(tablet){
-                font-size: rem(45px);
-                line-height: rem(45px);
+                font-size: rem(55px);
+                line-height: rem(40px);
             }
 
             @include bp(tabletMD){
-                font-size: rem(50px);
-                line-height: rem(40px);
+                font-size: rem(60px);
+                line-height: rem(45px);
                 text-align: left;
             }
 
             @include bp(laptop){
-                font-size: rem(60px);
+                font-size: rem(70px);
                 line-height: rem(50px);
             }
 
             @include bp(laptopBIG){
-                font-size: rem(65px);
-                line-height: rem(55px);
+                font-size: rem(75px);
+                line-height: rem(53px);
             }
 
             @include bp(escritorio){
                 font-size: rem(80px);
-                line-height: rem(65px);
+                line-height: rem(57px);
             }
 
     
@@ -105,14 +109,14 @@ footer{
         h3 {
     
             text-align: center;
-            font-size: rem(40px);
-            line-height: rem(40px);
+            font-size: rem(45px);
+            line-height: rem(45px);
             font-family: $font_regular;
             margin-bottom: rem(15px);
             color: $tercer_color;
 
             @include bp(mobileBIG){
-                font-size: rem(45px);
+                font-size: rem(55px);
             }
             
             @include bp(tablet){
@@ -121,7 +125,7 @@ footer{
 
             @include bp(tabletMD){
                 text-align: left;
-                font-size: rem(50px);
+                font-size: rem(60px);
                 line-height: rem(50px);
                 margin-top: rem(40px);
                 margin-bottom: 0px;
@@ -129,18 +133,18 @@ footer{
 
             @include bp(laptop){
                 margin-top: rem(20px);
-                font-size: rem(45px);
-                line-height: rem(45px);
+                font-size: rem(70px);
+                line-height: rem(55px);
             }
 
             @include bp(laptopBIG){
-                font-size: rem(40px);
-                line-height: rem(40px);
+                font-size: rem(70px);
+                line-height: rem(55px);
             }
 
             @include bp(escritorio){
-                font-size: rem(55px);
-                line-height: rem(55px);
+                font-size: rem(80px);
+                line-height: rem(65px);
             }
     
         }

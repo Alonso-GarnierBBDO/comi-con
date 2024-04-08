@@ -342,8 +342,10 @@
 
                 button {
 
+                    max-width: 250px;
+
                     @include bp(tabletMD){
-                        max-width: 200px;
+                        max-width: 300px;
                     }
 
                 }
