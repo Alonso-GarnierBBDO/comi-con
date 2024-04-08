@@ -13,11 +13,10 @@ const Ligtning = (canva : HTMLCanvasElement) => {
             flashOpacity : number, 
             height : number, 
             lastFrame : number, 
-            tick, 
             width : number;
 
         const canvas = canva;
-        const context = canva.getContext('2d');
+        const context : CanvasRenderingContext2D = canva.getContext('2d') as CanvasRenderingContext2D;
 
         width = 0.0;
         height = 0.0;
@@ -49,7 +48,7 @@ const Ligtning = (canva : HTMLCanvasElement) => {
         };
 
 
-        const launchBolt = function(x : number, y : number, length : number, direction : number) : (x: number, y: number, length: number, direction: number, boltContext: number) => number {
+        const launchBolt = function(x : number, y : number, length : number, direction : number) : number {
 
             // Set the flash opacity.
             flashOpacity = 0.15 + Math.random() * 0.2;
@@ -69,11 +68,19 @@ const Ligtning = (canva : HTMLCanvasElement) => {
             
             // Launch it!!
             return recursiveLaunchBolt(x, y, length, direction, boltContext);
-          };
+        };
             
 
-        const recursiveLaunchBolt = function(x : number, y : number, length : number, direction : number, boltContext: number) : (x: number, y: number, length: number, direction: number, boltContext: number) => number {
-            let boltInterval;
+        const recursiveLaunchBolt = function(
+          x : number, 
+          y : number, 
+          length : number, 
+          direction : number, 
+          boltContext: 
+          CanvasRenderingContext2D
+        )  : number {
+
+            let boltInterval : number = 0;
 
             const originalDirection = direction;
             
@@ -110,11 +117,11 @@ const Ligtning = (canva : HTMLCanvasElement) => {
 
 
 
-          tick = function() {
-            let bolt, elapsed, frame, i, j, len, length, x, y;
+          const tick = function() {
+            let bolt, i, j, len, length, x, y;
             // Keep track of the frame time.
-            frame = (new Date()).getTime();
-            elapsed = (frame - lastFrame) / 1000.0;
+            const frame = (new Date()).getTime();
+            const elapsed = (frame - lastFrame) / 1000.0;
             lastFrame = frame;
             
             // Clear the canvas.
