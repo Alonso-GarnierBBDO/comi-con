@@ -20,10 +20,6 @@
             grid-gap: rem(20px);
         }
 
-        @include bp(laptop){
-            //grid-template-columns: 40% 60%;
-        }
-
         .content {
 
             width: 100%;
@@ -154,8 +150,6 @@
                     width: 100%;
                     margin: rem(15px) 0px;
                     max-width: 350px;
-                    position: relative;
-                    transform: rotateY(-72deg);
     
                     @include bp(mobileBIG){
                         margin: rem(20px) 0px;
