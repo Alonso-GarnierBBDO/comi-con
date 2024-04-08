@@ -104,7 +104,9 @@ const Form = ({ removeForm }: Props) => {
                             <section className='container_remolino'>
                                 <img className='remolino' src={RemolinoImg} alt="Remolino dan vueltas" />
                             </section>
-                            <img className='image_chocolate' src={ChoysChocolateImage} alt="Chocolate Imagen" />
+                            <section className='container_chocolate'>
+                                <img className='image_chocolate' src={ChoysChocolateImage} alt="Chocolate Imagen" />
+                            </section>
                         </section>
                     </section>
                     <form onSubmit={ (e) => save_form(e) }>
