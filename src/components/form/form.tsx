@@ -1,4 +1,4 @@
-//import ChoysChocolateImage from '../../assets/img/choys_chocolate.png';
+import ChoysChocolateImage from '../../assets/img/choys_chocolate.png';
 import ChoysLogo from '../../assets/img/choys_logo.png';
 import RemolinoImg from '../../assets/img/remolino.png';
 import AudioSound from '../../helper/audio/audio';
@@ -104,7 +104,7 @@ const Form = ({ removeForm }: Props) => {
                             <section className='container_remolino'>
                                 <img className='remolino' src={RemolinoImg} alt="Remolino dan vueltas" />
                             </section>
-                            
+                            <img className='image_chocolate' src={ChoysChocolateImage} alt="Chocolate Imagen" />
                         </section>
                     </section>
                     <form onSubmit={ (e) => save_form(e) }>
