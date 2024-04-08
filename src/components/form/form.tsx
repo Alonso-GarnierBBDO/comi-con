@@ -1,4 +1,4 @@
-import ChoysChocolateImage from '../../assets/img/choys_chocolate.png';
+
 import ChoysLogo from '../../assets/img/choys_logo.png';
 import RemolinoImg from '../../assets/img/remolino.png';
 import AudioSound from '../../helper/audio/audio';
@@ -105,7 +105,7 @@ const Form = ({ removeForm }: Props) => {
                     <section className='content'>
                         <h2>¡PRIMERO, VAMOS A CONOCER EL PERFIL DE TU PERSONAJE!</h2>
                         <section className='image'>
-                            <img className='image_chocolate' src={ChoysChocolateImage} alt="Chocolate Imagen" />
+                            
                         </section>
                     </section>
                     <form onSubmit={ (e) => save_form(e) }>
