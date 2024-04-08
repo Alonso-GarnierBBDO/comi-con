@@ -154,6 +154,7 @@
                     width: 100%;
                     margin: rem(15px) 0px;
                     max-width: 350px;
+                    position: relative;
     
                     @include bp(mobileBIG){
                         margin: rem(20px) 0px;
@@ -180,7 +181,10 @@
         }
     
         form {
+
+            position: relative;
     
+
             p {
     
                 font-size: rem(20px);
