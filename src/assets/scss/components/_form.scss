@@ -1,3 +1,80 @@
+.container_remolino.hola {
+    width: 100dvw;
+    height: 100dvw;
+    position: absolute;
+    overflow: hidden;
+
+    @include bp(mobileBIG){
+        width: 85dvw;
+        height: 85dvw;
+    }
+
+    @include bp(tablet){
+        width: 70dvw;
+        height: 70dvw;
+    }
+    
+    @include bp(laptop){
+        display: block;
+    }
+
+    @include bp(laptopBIG){
+        width: 60dvw;
+        height: 60dvw;
+    }
+
+    @include bp(escritorio){
+        width: 50dvw;
+        height: 50dvw;
+    }
+
+    .remolino {
+        
+        width: 100dvw;
+        height: 100dvw;
+        position: absolute;
+        mix-blend-mode: screen;
+        object-fit: contain;
+        transition: .3s ease scale;
+        pointer-events: none;
+        user-select: none;
+
+        @include bp(mobileBIG){
+            width: 85dvw;
+            height: 85dvw;
+        }
+
+        @include bp(tablet){
+            width: 70dvw;
+            height: 70dvw;
+            translate: 0px rem(-10px);
+        }
+        
+        @include bp(laptop){
+            translate: 0px rem(-15px);
+            display: block;
+        }
+
+        @include bp(laptopBIG){
+            width: 60dvw;
+            height: 60dvw;
+            max-width: 1000px;
+            max-height: 1000px;
+            translate: 0px rem(-20px);
+            
+        }
+
+        @include bp(escritorio){
+            width: 50dvw;
+            height: 50dvw;
+            translate: 0px rem(-30px);
+        }
+
+
+        @include animate(remolino, 2s, linear, infinite)
+    }
+}
+
 .form_item {
 
     width: 100%;
@@ -63,83 +140,7 @@
                 }
 
             }
-    
-            .container_remolino {
-                width: 100dvw;
-                height: 100dvw;
-                position: absolute;
-                overflow: hidden;
 
-                @include bp(mobileBIG){
-                    width: 85dvw;
-                    height: 85dvw;
-                }
-
-                @include bp(tablet){
-                    width: 70dvw;
-                    height: 70dvw;
-                }
-                
-                @include bp(laptop){
-                    display: block;
-                }
-
-                @include bp(laptopBIG){
-                    width: 60dvw;
-                    height: 60dvw;
-                }
-
-                @include bp(escritorio){
-                    width: 50dvw;
-                    height: 50dvw;
-                }
-
-                .remolino {
-                    
-                    width: 100dvw;
-                    height: 100dvw;
-                    position: absolute;
-                    mix-blend-mode: screen;
-                    object-fit: contain;
-                    transition: .3s ease scale;
-                    pointer-events: none;
-                    user-select: none;
-    
-                    @include bp(mobileBIG){
-                        width: 85dvw;
-                        height: 85dvw;
-                    }
-    
-                    @include bp(tablet){
-                        width: 70dvw;
-                        height: 70dvw;
-                        translate: 0px rem(-10px);
-                    }
-                    
-                    @include bp(laptop){
-                        translate: 0px rem(-15px);
-                        display: block;
-                    }
-    
-                    @include bp(laptopBIG){
-                        width: 60dvw;
-                        height: 60dvw;
-                        max-width: 1000px;
-                        max-height: 1000px;
-                        translate: 0px rem(-20px);
-                        
-                    }
-    
-                    @include bp(escritorio){
-                        width: 50dvw;
-                        height: 50dvw;
-                        translate: 0px rem(-30px);
-                    }
-    
-    
-                    @include animate(remolino, 2s, linear, infinite)
-                }
-            }
 
             .image{
     

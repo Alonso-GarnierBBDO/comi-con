@@ -93,6 +93,10 @@ const Form = ({ removeForm }: Props) => {
 
     return (
         <>
+
+            <section className='container_remolino hola'>
+                <img className='remolino' src={RemolinoImg} alt="Remolino dan vueltas" />
+            </section>
             <section className="form_item responsive-box">
                 <section className='logo'>
                     <img src={ChoysLogo} alt="Logo Choys" width={200} height={200}/>
@@ -101,12 +105,7 @@ const Form = ({ removeForm }: Props) => {
                     <section className='content'>
                         <h2>¡PRIMERO, VAMOS A CONOCER EL PERFIL DE TU PERSONAJE!</h2>
                         <section className='image'>
-                            <section className='container_remolino'>
-                                <img className='remolino' src={RemolinoImg} alt="Remolino dan vueltas" />
-                            </section>
-                            <section style={{background: 'red', position: 'relative'}}>
-                                <img className='image_chocolate' src={ChoysChocolateImage} alt="Chocolate Imagen" />
-                            </section>
+                            <img className='image_chocolate' src={ChoysChocolateImage} alt="Chocolate Imagen" />
                         </section>
                     </section>
                     <form onSubmit={ (e) => save_form(e) }>
