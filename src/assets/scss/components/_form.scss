@@ -150,6 +150,7 @@
                     width: 100%;
                     margin: rem(15px) 0px;
                     max-width: 350px;
+                    position: absolute;
     
                     @include bp(mobileBIG){
                         margin: rem(20px) 0px;
