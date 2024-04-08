@@ -21,7 +21,9 @@ const ThanksComponent = () => {
                         <p className='tabletMD'>¡Ya estás participando para llevar tu poder al próximo nivel en la comic con con tu Golden ticket!</p>
                     </section>
                     <section className='imgs'>
-                        <img src={RemolinoIMG} alt="Remolino Imagen" className='remolino' />
+                        <section className='container_remolino'>
+                            <img src={RemolinoIMG} alt="Remolino Imagen" className='remolino' />
+                        </section>
                         <img src={CuboIMG} alt="Cubo de imagenes" className='cubo'/>
                     </section>
                     <section className='footer'>
