@@ -45,7 +45,8 @@ header{
 
     .logo {
 
-        min-height: rem(100px);
+        min-height: auto;
+        margin-top: rem(40px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -54,6 +55,8 @@ header{
     
         @include bp(mobileBIG){
             height: rem(70px);
+            min-height: rem(100px);
+            margin-top: 0px;
         }
     
         @include bp(laptop){
