@@ -75,8 +75,6 @@
                     height: 100dvw;
                     position: absolute;
                     overflow: hidden;
-                    z-index: -1;
-                    mix-blend-mode: screen;
     
                     @include bp(mobileBIG){
                         width: 85dvw;
@@ -108,12 +106,11 @@
                     width: 100dvw;
                     height: 100dvw;
                     position: absolute;
-                    mix-blend-mode: screen;  //color-dodge
+                    mix-blend-mode: screen;
                     object-fit: contain;
                     transition: .3s ease scale;
                     pointer-events: none;
                     user-select: none;
-                    z-index: -1;
     
                     @include bp(mobileBIG){
                         width: 85dvw;
