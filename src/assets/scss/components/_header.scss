@@ -45,19 +45,12 @@ header{
 
     .logo {
 
-        min-height: auto;
-        margin-top: rem(40px);
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         z-index: 999;
     
-        @include bp(mobileBIG){
-            height: rem(70px);
-            min-height: rem(100px);
-            margin-top: 0px;
-        }
     
         @include bp(laptop){
             height: rem(150px);
@@ -110,6 +103,30 @@ header{
             position: relative;
             z-index: 99;
 
+            .title {
+
+                position: relative;
+                height: rem(175px);
+                width: 100%;
+
+                @include bp(tablet){
+                    height: rem(195px);
+                }
+
+                @include bp(tabletMD){
+                    height: rem(220px);
+                }
+
+                @include bp(laptop){
+                    height: rem(255px);
+                }
+
+                @include bp(laptopBIG){
+                    height: rem(330px);
+                }
+
+            }
+
             h1 {
 
                 display: flex;
@@ -146,7 +163,7 @@ header{
 
                 }
 
-                .translate {
+                /*.translate {
 
                     transform: translateY(rem(39px));
 
@@ -166,43 +183,69 @@ header{
                         transform: translateY(rem(79px));
                     }
 
-                }
+                }*/
 
                 .tu_poder{
                     
-                    transform: translateY(rem(18px));
+                    transform: translateY(rem(-20px));
 
                     @include bp(tablet){
-                        transform: translateY(rem(20px));
+                        transform: translateY(rem(-22px));
                     }
 
                     @include bp(tabletMD){
-                        transform: translateY(rem(22px));
+                        transform: translateY(rem(-27px));
                     }
 
                     @include bp(laptop){
-                        transform: translateY(rem(28px));
+                        transform: translateY(rem(-33px));
                     }
 
                     @include bp(laptopBIG){
-                        transform: translateY(rem(37px));
+                        transform: translateY(rem(-40px));
                     }
+                }
+
+                .participa {
+
+                    transform: translateY(rem(-37px));
+
+                    @include bp(tablet){
+                        transform: translateY(rem(-40px));
+                    }
+
+                    @include bp(tabletMD){
+                        transform: translateY(rem(-48px));
+                    }
+
+                    @include bp(laptop){
+                        transform: translateY(rem(-60px));
+                    }
+
+                    @include bp(laptopBIG){
+                        transform: translateY(rem(-71px));
+                    }
+
                 }
 
                 .golden {
 
-                    transform: translateY(rem(-11px));
+                    transform: translateY(rem(-49px));
 
                     @include bp(tablet){
-                        transform: translateY(rem(-15px));
+                        transform: translateY(rem(-54px));
+                    }
+
+                    @include bp(tabletMD){
+                        transform: translateY(rem(-60px));
                     }
 
                     @include bp(laptop){
-                        transform: translateY(rem(-16px));
+                        transform: translateY(rem(-76px));
                     }
 
                     @include bp(laptopBIG){
-                        transform: translateY(rem(-22px));
+                        transform: translateY(rem(-90px));
                     }
                 }
     
