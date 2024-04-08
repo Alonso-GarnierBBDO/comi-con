@@ -10,8 +10,11 @@ import QuestionFour from './questions/question_four';
 import QuestionFive from './questions/question_five';
 import QuestionSix from './questions/question_six';
 
+type Props = {
+    removeQuiz: (show : boolean) => void
+ };
 
-function Game(){
+function Game({ removeQuiz } : Props){
 
     const [questionText, setQuestionText] = useState('Llegás a la clase y el profe decide hacer un quiz sorpresa… entonces vos:');
     const [animationText, setAnimationText] = useState(false);
@@ -21,9 +24,6 @@ function Game(){
     const [optionsFour, setOptionsFour] = useState(false);
     const [optionsFive, setOptionsFive] = useState(false);
     const [optionsSix, setOptionsSix] = useState(false);
-    const [showButton, setShowButton] = useState(false);
-    const [buttonText, setButtonText] = useState('¡TOCÁ Y DESCUBRÍ TU PODER!');
-    const [disabledButton, setDisabletButton] = useState(false);
 
     const saveQuestion = (value : string, questionNumber : string) => {
         localStorage.setItem(questionNumber, value);
@@ -54,7 +54,9 @@ function Game(){
             setOptionsFive(false);
             setOptionsSix(true);
         }else if(questionNumber == 'question_six'){
-            setShowButton(true);
+
+            removeQuiz(true);
+            
         }
 
     }
@@ -66,18 +68,12 @@ function Game(){
         }, 300)
     }
 
-    const sendInfo = () => {
-
-        setButtonText('Descubriendo...');
-        setDisabletButton(true);
-
-    }
 
     return (
         <>
             <section className="game">
                 
-            <section className='logo'>
+                <section className='logo'>
                     <img src={ChoysLogo} alt="Logo Choys" width={200} height={200}/>
                 </section>
                 <section className='content_items'>
@@ -118,13 +114,6 @@ function Game(){
 
 
                             </form>
-                            {
-                                showButton && 
-                                <button className='finish_item' onClick={sendInfo} disabled={disabledButton}>
-                                    <span className='title'>{buttonText}</span>
-                                    <span className='top_bottom'></span>
-                                </button>
-                            }
                         </section>
 
                         <hr />

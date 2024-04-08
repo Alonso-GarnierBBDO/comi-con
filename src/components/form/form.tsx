@@ -106,11 +106,11 @@ const Form = ({ removeForm }: Props) => {
                         <section className='form'>
                             <section>
                                 <label htmlFor="">
-                                    <input type="text" placeholder='Nombre' name='name' value='Alonso'/>
+                                    <input type="text" placeholder='Nombre' name='name'/>
                                     <span className='name'></span>
                                 </label>
                                 <label htmlFor="">
-                                    <input type="text" placeholder='Apellido' name='last_name' value='Artavia'/>
+                                    <input type="text" placeholder='Apellido' name='last_name'/>
                                     <span className='last_name'></span>
                                 </label>
                             </section>
@@ -125,17 +125,17 @@ const Form = ({ removeForm }: Props) => {
                                     <span className='genero'></span>
                                 </label>
                                 <label htmlFor="">
-                                    <input type="email" placeholder='CORREO ELECTRÓNICO' name='correo_electrónico' value='alonso.artavia@garnierbbdo.com'/>
+                                    <input type="email" placeholder='CORREO ELECTRÓNICO' name='correo_electrónico'/>
                                     <span className='correo_electrónico'>Error correo electrónico</span>
                                 </label>
                             </section>
                             <section>
                                 <label htmlFor="">
-                                    <input type="number" name="phone" id="" placeholder='TELÉFONO' min='11111111' value='71550572'/>
+                                    <input type="number" name="phone" id="" placeholder='TELÉFONO' min='11111111'/>
                                     <span className='phone'>Error Nombre</span>
                                 </label>
                                 <label htmlFor="">
-                                    <input type="number" max={100} min={0} placeholder='EDAD' name='la_year' value='22'/>
+                                    <input type="number" max={100} min={0} placeholder='EDAD' name='la_year'/>
                                     <span className='la_year'>Error Edad</span>
                                 </label>
                             </section>

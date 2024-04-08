@@ -3,6 +3,7 @@
 @import './components/header';
 @import './components/form';
 @import './components/game';
+@import './components/footer';
 
 
 *,
@@ -284,5 +285,16 @@ button {
         }
 
     }
+
+}
+
+canvas {
+
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
 
 }
