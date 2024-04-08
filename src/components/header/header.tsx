@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChoysLogo from '../../assets/img/choys_logo.png';
 import TicketImg from '../../assets/img/golden_ticket.png';
 import Remolino from '../../assets/img/remolino.png';
+import AudioSound from '../../helper/audio/audio';
 
 type Props = {
     removeHeader: (show : boolean) => void
@@ -13,6 +14,8 @@ function Header({ removeHeader }: Props) {
     const [ startText, setStartText ] = useState('Empecémos');
 
     const showForm = () => {
+
+        AudioSound();
 
         removeHeader(true);
 

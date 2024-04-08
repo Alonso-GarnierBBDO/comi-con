@@ -1,6 +1,8 @@
 import ChoysChocolateImage from '../../assets/img/choys_chocolate.png';
 import ChoysLogo from '../../assets/img/choys_logo.png';
 import RemolinoImg from '../../assets/img/remolino.png';
+import AudioSound from '../../helper/audio/audio';
+
 
 type Props = {
     removeForm: (show : boolean) => void
@@ -77,6 +79,8 @@ const Form = ({ removeForm }: Props) => {
         });
 
         if(errorNumber == 0){
+
+            AudioSound();
 
             inputsSelectsTags.forEach( (e : HTMLInputElement | HTMLSelectElement) => {
                 localStorage.setItem(e.name, e.value);

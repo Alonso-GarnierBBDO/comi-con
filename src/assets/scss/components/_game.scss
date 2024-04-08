@@ -133,11 +133,22 @@
             align-items: center;
             height: 100%;
             position: relative;
+            width: 100%;
+            max-width: calc(95% - 30px);
 
             @include bp(tablet){
                 height: calc(70% - rem(70px));
                 justify-content: center;
                 transform: translateY(-17%);
+                max-width: calc(700px - 30px);
+            }
+
+            @include bp(tabletMD){
+                max-width: 850px;
+            }
+
+            @include bp(laptop){
+                max-width: 1000px;
             }
 
             @include bp(laptopBIG){
@@ -183,7 +194,7 @@
                 }
 
                 @include bp(escritorio){
-                    width: 40%;
+                    width: 55%;
                 }
 
 
@@ -275,7 +286,7 @@
                 }
 
                 @include bp(escritorio){
-                    width: calc(40% - rem(30px));
+                    width: calc(52% - rem(30px));
                 }
 
                 .finish_item {

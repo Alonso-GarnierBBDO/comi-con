@@ -56,6 +56,7 @@ function App() {
 
   return (
     <>
+
       <main className='application' style={{
           backgroundImage: `url(${background})`
         }}>

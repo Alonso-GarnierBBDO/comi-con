@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import AudioSound from '../../helper/audio/audio';
+
 import ChoysLogo from '../../assets/img/choys_logo.png';
 import RemolinoImg from '../../assets/img/remolino.png';
 import GameImg from '../../assets/img/game_mobile.png';
@@ -27,6 +29,8 @@ function Game({ removeQuiz } : Props){
 
     const saveQuestion = (value : string, questionNumber : string) => {
         localStorage.setItem(questionNumber, value);
+
+        AudioSound();
 
         if(questionNumber == 'question_one'){
             setAnimationText(true);
