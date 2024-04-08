@@ -148,32 +148,32 @@
 
                     position: relative;
                     width: 100%;
+                    max-width: 350px;
+                    margin: rem(15px) 0px;
+
+                    @include bp(mobileBIG){
+                        margin: rem(20px) 0px;
+                    }
+    
+                    @include bp(tablet){
+                        max-width: 400px;
+                    }
+    
+                    @include bp(tabletMD){
+                        max-width: 500px;
+                    }
+    
+                    @include bp(laptopBIG){
+                        max-width: 800px;
+                    }
 
                     .image_chocolate {
     
                         width: 100%;
-                        margin: rem(15px) 0px;
-                        max-width: 350px;
                         position: absolute;
                         left: 0px;
                         top: 0px;
-        
-                        @include bp(mobileBIG){
-                            margin: rem(20px) 0px;
-                        }
-        
-                        @include bp(tablet){
-                            max-width: 400px;
-                        }
-        
-                        @include bp(tabletMD){
-                            max-width: 500px;
-                        }
-        
-                        @include bp(laptopBIG){
-                            max-width: 800px;
-                        }
-        
+
         
                     }
 
