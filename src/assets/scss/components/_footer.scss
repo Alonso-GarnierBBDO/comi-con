@@ -238,18 +238,18 @@ footer{
             
             @include bp(laptop){
                 display: block;
-                width: 90dvh;
-                height: 90dvh;
+                width: 70dvh;
+                height: 70dvh;
             }
 
             @include bp(laptopBIG){
-                width: 100dvh;
-                height: 100dvh;
+                width: 80dvh;
+                height: 80dvh;
             }
 
             @include bp(escritorio){
-                width: 100dvh;
-                height: 100dvh;
+                width: 90dvh;
+                height: 90dvh;
             }
         }
 
