@@ -11,11 +11,11 @@ footer{
 
         align-items: center;
         justify-content: center;
-        display: none;
+        //display: none;
 
         @include bp(mobileBIG){
             min-height: rem(100px);
-            height: rem(70px);
+            //height: rem(70px);
             width: 100%;
         }
 
@@ -24,7 +24,7 @@ footer{
         }
 
         @include bp(laptop){
-            height: rem(150px);
+            //height: rem(150px);
         }
 
     }
@@ -308,11 +308,11 @@ footer{
             }
 
             @include bp(tabletMD){
-                max-width: 400px;
+                max-width: 500px;
             }
 
             @include bp(escritorio){
-                max-width: 500px;
+                max-width: 600px;
             }
 
         }

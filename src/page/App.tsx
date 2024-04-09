@@ -8,6 +8,8 @@ import ThanksComponent from '../components/thanks/thanks';
 
 import Ligtning from '../helper/lightning/lightning';
 
+import { loadPage } from '../helper/load/load';
+
 function App() {
 
   const [removeHeader, setRemoveHeader] = useState(false);
@@ -18,6 +20,8 @@ function App() {
   const [deleteQuiz, setDeleteQuiz] = useState(false);
 
   const canva = useRef(null);
+
+  loadPage();
 
   useEffect(() => {
 
@@ -62,6 +66,7 @@ function App() {
         }}>
 
           <canvas ref={canva}></canvas>
+          
 
         {
           !deleteHeader && 
