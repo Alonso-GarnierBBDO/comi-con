@@ -99,7 +99,7 @@ function App() {
         {
           removeQuiz && 
           <>
-            <section className={`application absolute`} style={{
+            <section className={`application absolute footer`} style={{
               backgroundImage: `url(${background})`
             }}>
               <ThanksComponent/>

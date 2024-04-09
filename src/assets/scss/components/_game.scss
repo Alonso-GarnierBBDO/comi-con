@@ -293,19 +293,15 @@
                     }
         
                     @include bp(tabletMD){
-                        font-size: rem(28px);
-                        line-height: rem(28px);
+                        font-size: rem(22px);
+                        line-height: rem(22px);
                     }
         
                     @include bp(laptop){
-                        font-size: rem(30px);
-                        line-height: rem(30px);
+                        font-size: rem(25px);
+                        line-height: rem(25px);
                     }
         
-                    @include bp(laptopBIG){
-                        font-size: rem(31px);
-                        line-height: rem(31px);
-                    }
 
                     @include bp(escritorio){
                         font-size: rem(32px);
@@ -586,14 +582,14 @@
                                 }
 
                                 @include bp(tabletMD){
-                                    font-size: rem(20px);
-                                    line-height: rem(20px);
+                                    font-size: rem(18px);
+                                    line-height: rem(18px);
                                 }
                                 
     
                                 @include bp(laptop){
-                                    font-size: rem(21px);
-                                    line-height: rem(21px);
+                                    font-size: rem(19px);
+                                    line-height: rem(19px);
                                 }
     
                                 @include bp(laptopBIG){

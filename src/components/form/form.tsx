@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState} from 'react';
-
 import ChoysChocolateImage from '../../assets/img/choys_chocolate.png';
 import ChoysLogo from '../../assets/img/choys_logo.png';
 import RemolinoImg from '../../assets/img/remolino.png';
@@ -11,24 +9,6 @@ type Props = {
  };
 
 const Form = ({ removeForm }: Props) => {
-
-    const imageChoys = useRef(null);
-    const [heightImage, setHeightImage] = useState(0);
-
-    useEffect(()=> {
-
-        const imageCurrent : HTMLImageElement | null= imageChoys.current;
-
-        if(imageCurrent){
-
-            const imageTag : HTMLImageElement = imageCurrent;
-
-            imageTag.addEventListener('load', () => {
-                setHeightImage(imageTag.height)
-            })
-        }
-
-    }, [])
 
     const validateEmail = (email : string) : RegExpMatchArray | null => {
         return email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
@@ -124,11 +104,7 @@ const Form = ({ removeForm }: Props) => {
                             <section className='container_remolino'>
                                 <img className='remolino' src={RemolinoImg} alt="Remolino dan vueltas" />
                             </section>
-                            <section className='container_chocolate' style={{
-                                height: heightImage
-                            }}>
-                                <img ref={imageChoys} className='image_chocolate' src={ChoysChocolateImage} alt="Chocolate Imagen" />
-                            </section>
+                            <img className='image_chocolate' src={ChoysChocolateImage} alt="Chocolate Imagen" />
                         </section>
                     </section>
                     <form onSubmit={ (e) => save_form(e) }>

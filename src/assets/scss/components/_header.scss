@@ -311,16 +311,18 @@ header{
                 
                 @include bp(laptop){
                     display: block;
+                    width: 90dvh;
+                    height: 90dvh;
                 }
 
                 @include bp(laptopBIG){
-                    width: 60dvw;
-                    height: 60dvw;
+                    width: 100dvh;
+                    height: 100dvh;
                 }
 
                 @include bp(escritorio){
-                    width: 50dvw;
-                    height: 50dvw;
+                    width: 100dvh;
+                    height: 100dvh;
                 }
             }
 
@@ -350,11 +352,14 @@ header{
                 @include bp(laptop){
                     translate: 0px rem(-15px);
                     display: block;
+                    width: 100%;
+                    height: 100%;
+                
                 }
 
                 @include bp(laptopBIG){
-                    width: 60dvw;
-                    height: 60dvw;
+                    width: 100%;
+                    height: 100%;
                     max-width: 1000px;
                     max-height: 1000px;
                     translate: 0px rem(-20px);
@@ -362,8 +367,8 @@ header{
                 }
 
                 @include bp(escritorio){
-                    width: 50dvw;
-                    height: 50dvw;
+                    width: 100%;
+                    height: 100%;
                     translate: 0px rem(-30px);
                 }
 

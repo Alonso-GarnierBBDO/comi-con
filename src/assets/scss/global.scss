@@ -25,7 +25,7 @@ body{
     overflow: hidden;
     display: flex;
     width: 100%;
-    height: 100dvh;
+    min-height: 100dvh;
     transition: .3s ease;
     opacity: 1;
     scale: 1;
@@ -33,9 +33,13 @@ body{
     overflow-x: hidden;
 
     @include bp(tabletMD){
-        overflow-y: hidden;
+        //overflow-y: hidden;
     }
 
+}
+
+.application.absolute.footer{
+    overflow-y: auto;
 }
 
 .application.absolute{
