@@ -47,7 +47,7 @@ const loadPage = () => {
         createNumber(tercerNumber, true, false)
 
         // Corremos el contador
-        runCount(firstNumber, secondNumber, tercerNumber);
+        runCount(firstNumber, secondNumber);
 
         window.addEventListener('load', () => {
             stop = true;
@@ -118,15 +118,13 @@ const finishLoad = (firstHTML : HTMLElement, secondHTML : HTMLElement, tercerHTM
 }
 
 
-const runCount = (firstHTML : HTMLElement, secondHTML : HTMLElement, tercerHTML : HTMLElement) => {
+const runCount = (firstHTML : HTMLElement, secondHTML : HTMLElement) => {
 
     let count = 0;
-    let lastCount : number;
     
     const time = setInterval(() => {
         if(!stop){
             const lengthCount = count.toString().length;
-            lastCount = count;
             
             if(lengthCount == 1){
 
