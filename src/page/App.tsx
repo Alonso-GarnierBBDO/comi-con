@@ -8,7 +8,6 @@ import ThanksComponent from '../components/thanks/thanks';
 
 import Ligtning from '../helper/lightning/lightning';
 
-import { loadPage } from '../helper/load/load';
 
 function App() {
 
@@ -21,7 +20,6 @@ function App() {
 
   const canva = useRef(null);
 
-  loadPage();
 
   useEffect(() => {
 
